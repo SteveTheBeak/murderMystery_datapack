@@ -1,0 +1,1 @@
+execute if score DebugMode config matches 1 run title @a actionbar [{"text":"Countdown: "},{"score":{"name":"Countdown","objective":"timer"}},{"text":" | PvP: "},{"score":{"name":"PvpTimer","objective":"pvptimer"}}]

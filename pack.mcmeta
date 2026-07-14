@@ -1,0 +1,7 @@
+﻿{
+  "pack": {
+    "description": "Murder Mystery",
+    "min_format": [107, 0],
+    "max_format": [107, 1]
+  }
+}
