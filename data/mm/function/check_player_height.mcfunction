@@ -21,6 +21,6 @@ execute if score @s temp < MapMinHeight config if score MapSelectIndex config ma
 execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 2 if score @s retries matches 6.. run tp @s 538 -49 312
 execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 2 if score @s retries matches 6.. run scoreboard players set @s retries 0
 
-#If map is Cruise
+#If map is cruise
 execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 3 if score @s retries matches 6.. run tp @s -24 -13 475
 execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 3 if score @s retries matches 6.. run scoreboard players set @s retries 0

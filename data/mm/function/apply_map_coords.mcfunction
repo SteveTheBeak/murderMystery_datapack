@@ -22,8 +22,8 @@ execute if score MapSelectIndex config matches 2 run scoreboard players set MapM
 execute if score MapSelectIndex config matches 2 run scoreboard players set MapMinHeight config -52
 
 #Cruise
-execute if score MapSelectIndex config matches 2 run scoreboard players set MapCenterX config -24
-execute if score MapSelectIndex config matches 2 run scoreboard players set MapCenterZ config 475
-execute if score MapSelectIndex config matches 2 run scoreboard players set MapRadius config 15
-execute if score MapSelectIndex config matches 2 run scoreboard players set MapMaxHeight config -11
-execute if score MapSelectIndex config matches 2 run scoreboard players set MapMinHeight config -13
+execute if score MapSelectIndex config matches 3 run scoreboard players set MapCenterX config -24
+execute if score MapSelectIndex config matches 3 run scoreboard players set MapCenterZ config 475
+execute if score MapSelectIndex config matches 3 run scoreboard players set MapRadius config 15
+execute if score MapSelectIndex config matches 3 run scoreboard players set MapMaxHeight config -11
+execute if score MapSelectIndex config matches 3 run scoreboard players set MapMinHeight config -13
