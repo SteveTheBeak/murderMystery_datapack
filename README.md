@@ -21,6 +21,8 @@ To do:
 
 -Only murderers can pvp
 -Put in all maps (2 so far)
+-Move players into the map, scattered throughout
+-Assign roles upon game start
 
 
 
