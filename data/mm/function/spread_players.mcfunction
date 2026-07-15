@@ -1,0 +1,1 @@
+$spreadplayers $(x) $(z) 5 $(radius) under $(maxheight) false $(target)
