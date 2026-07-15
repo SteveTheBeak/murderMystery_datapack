@@ -1,3 +1,5 @@
+#APPLY VALUE TO DISPLAY | PATH 1.2.1
+
 execute if score MurdererCountIndex config matches 0 run scoreboard players set MurdererCountLength config 1
 execute if score MurdererCountIndex config matches 1 run scoreboard players set MurdererCountLength config 2
 execute if score MurdererCountIndex config matches 2 run scoreboard players set MurdererCountLength config 3

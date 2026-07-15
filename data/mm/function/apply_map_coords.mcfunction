@@ -1,3 +1,5 @@
+#APPLY MAP COORDS | PATH 1.3.2
+
 #The Skeld
 execute if score MapSelectIndex config matches 0 run scoreboard players set MapCenterX config 130
 execute if score MapSelectIndex config matches 0 run scoreboard players set MapCenterZ config 166

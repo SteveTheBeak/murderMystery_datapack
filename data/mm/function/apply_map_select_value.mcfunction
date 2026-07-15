@@ -1,3 +1,5 @@
+#APPLY MAP TO DISPLAY | PATH 1.3.1
+
 execute if score MapSelectIndex config matches 0 run scoreboard players set MapSelectLength config 1
 execute if score MapSelectIndex config matches 1 run scoreboard players set MapSelectLength config 2
 execute if score MapSelectIndex config matches 2 run scoreboard players set MapSelectLength config 3

@@ -1,3 +1,5 @@
+#GAME END SEQUENCE | PATH 4
+
 say immediate end is called
 execute run gamerule pvp false
 execute run tellraw @a {"text":"PvP has been disabled.","color":"gray","italic":true}

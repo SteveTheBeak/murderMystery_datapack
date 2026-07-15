@@ -1,3 +1,5 @@
+#APPLY VALUE TO TIMER | PATH 1.1.2
+
 execute if score TimerIndex config matches 0 run scoreboard players set TimerLength config 5
 execute if score TimerIndex config matches 1 run scoreboard players set TimerLength config 8
 execute if score TimerIndex config matches 2 run scoreboard players set TimerLength config 10

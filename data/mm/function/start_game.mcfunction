@@ -1,3 +1,5 @@
+#START GAME | PATH 1.4.1.1
+
 scoreboard players set GameActive config 1
 
 team empty murderer
