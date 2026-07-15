@@ -1,0 +1,1 @@
+execute as @r[team=!murderer] run team join murderer @s
