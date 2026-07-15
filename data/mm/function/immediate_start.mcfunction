@@ -25,5 +25,7 @@ execute run scoreboard players set GameActive config 0
 execute as @e[type=text_display,tag=start_button_display,limit=1] run data merge entity @s {text:{text:"START GAME",color:"green",bold:true}}
 execute run scoreboard players set Countdown timer -1
 
+scoreboard players set @a HeightRetries temp 0
+
 #IN GAME PROCEDURES | PATH 3.3
 execute run function mm:in_game

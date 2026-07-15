@@ -33,6 +33,7 @@ execute unless score GameActive config matches -2147483648..2147483647 run score
 execute unless score DebugMode config matches -2147483648..2147483647 run scoreboard players set DebugMode config 1
 
 execute unless score HeightCheckCount config matches -2147483648..2147483647 run scoreboard players set HeightCheckCount config 0
+execute unless score PlayerRetries config matches -2147483648..2147483647 run scoreboard players set PlayerRetries config 0
 
 function mm:apply_map_coords
 
