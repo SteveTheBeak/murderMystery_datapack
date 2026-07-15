@@ -7,6 +7,7 @@ scoreboard objectives add murderers dummy
 scoreboard objectives add config dummy
 scoreboard objectives add temp dummy
 scoreboard objectives add const dummy
+scoreboard objectives add retries dummy
 
 scoreboard players set Const20 const 20
 scoreboard players set Const1200 const 1200

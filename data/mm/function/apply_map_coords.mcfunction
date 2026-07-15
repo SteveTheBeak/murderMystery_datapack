@@ -7,6 +7,23 @@ execute if score MapSelectIndex config matches 0 run scoreboard players set MapR
 execute if score MapSelectIndex config matches 0 run scoreboard players set MapMaxHeight config -48
 execute if score MapSelectIndex config matches 0 run scoreboard players set MapMinHeight config -49
 
-execute if score MapSelectIndex config matches 1 run scoreboard players set MapCenterX config 5000
-execute if score MapSelectIndex config matches 1 run scoreboard players set MapCenterZ config 0
-execute if score MapSelectIndex config matches 1 run scoreboard players set MapRadius config 150
+#Airship
+execute if score MapSelectIndex config matches 1 run scoreboard players set MapCenterX config 112
+execute if score MapSelectIndex config matches 1 run scoreboard players set MapCenterZ config 52
+execute if score MapSelectIndex config matches 1 run scoreboard players set MapRadius config 20
+execute if score MapSelectIndex config matches 1 run scoreboard players set MapMaxHeight config -41
+execute if score MapSelectIndex config matches 1 run scoreboard players set MapMinHeight config -42
+
+#Palace
+execute if score MapSelectIndex config matches 2 run scoreboard players set MapCenterX config 538
+execute if score MapSelectIndex config matches 2 run scoreboard players set MapCenterZ config 312
+execute if score MapSelectIndex config matches 2 run scoreboard players set MapRadius config 90
+execute if score MapSelectIndex config matches 2 run scoreboard players set MapMaxHeight config -48
+execute if score MapSelectIndex config matches 2 run scoreboard players set MapMinHeight config -52
+
+#Cruise
+execute if score MapSelectIndex config matches 2 run scoreboard players set MapCenterX config -24
+execute if score MapSelectIndex config matches 2 run scoreboard players set MapCenterZ config 475
+execute if score MapSelectIndex config matches 2 run scoreboard players set MapRadius config 15
+execute if score MapSelectIndex config matches 2 run scoreboard players set MapMaxHeight config -11
+execute if score MapSelectIndex config matches 2 run scoreboard players set MapMinHeight config -13
