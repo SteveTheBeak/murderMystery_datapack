@@ -1,5 +1,7 @@
 #IN GAME PROCEDURES | PATH 3.3
 
+execute as @a at @s run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.8
+
 #TEAM SELECTION
 scoreboard players operation MurdererLoop temp = MurdererCountLength config
 function mm:assign_murderers

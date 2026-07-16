@@ -1,7 +1,6 @@
 #IMMEDIATE START | PATH 3
 
 #TIMER SETUP
-execute run title @a title {"text":"GO!","color":"red","bold":true}
 execute run scoreboard players operation PvpTimer pvptimer = TimerLength config
 execute run scoreboard players operation PvpTimer pvptimer *= Const1200 const
 

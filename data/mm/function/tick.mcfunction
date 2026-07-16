@@ -7,10 +7,15 @@ function mm:debug_tick
 #GAME START COUNTDOWN
 execute if score Countdown timer matches 1.. run scoreboard players remove Countdown timer 1
 execute if score Countdown timer matches 100 run title @a title {"text":"5","color":"yellow","bold":true}
+execute if score Countdown timer matches 100 run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
 execute if score Countdown timer matches 80 run title @a title {"text":"4","color":"yellow","bold":true}
+execute if score Countdown timer matches 80 run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
 execute if score Countdown timer matches 60 run title @a title {"text":"3","color":"yellow","bold":true}
+execute if score Countdown timer matches 60 run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
 execute if score Countdown timer matches 40 run title @a title {"text":"2","color":"yellow","bold":true}
+execute if score Countdown timer matches 40 run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
 execute if score Countdown timer matches 20 run title @a title {"text":"1","color":"yellow","bold":true}
+execute if score Countdown timer matches 20 run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
 
 #IMMEDIATE START | PATH 3
 execute if score Countdown timer matches 0 run function mm:immediate_start
