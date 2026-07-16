@@ -10,10 +10,8 @@ execute as @r[team=!murderer] run team join detective @s
 team join innocent @a[team=!murderer,team=!detective]
 
 #ROLE ITEMS
-execute as @a[team=murderer] run item replace entity @s hotbar.1 with minecraft:iron_sword{Damage:250, Enchantments:[{id:"minecraft:sharpness",lvl:255}]}
+execute as @a[team=murderer] run item replace entity @s hotbar.1 with minecraft:iron_sword[minecraft:enchantments={"minecraft:sharpness":255}]
 execute as @a[team=detective] run item replace entity @s hotbar.8 with minecraft:bow
-#execute as @a[team=innocent] run item replace entity @s hotbar.0 with minecraft:bread
-#gamerule pvp true
 
 #ROLE TEXT
 execute as @a[team=innocent] run title @a[team=innocent] title {"text":"INNOCENT","color":"green","bold":false}

@@ -8,11 +8,12 @@ scoreboard objectives add config dummy
 scoreboard objectives add temp dummy
 scoreboard objectives add const dummy
 scoreboard objectives add retries dummy
-scoreboard objectives add MurdererCooldown dummy "Cooldown" #####
+scoreboard objectives add joined dummy
+scoreboard objectives add MurdererCooldown dummy "Cooldown"
 
 scoreboard players set Const20 const 20
 scoreboard players set Const1200 const 1200
-scoreboard players set CooldownTime config 100 #####
+scoreboard players set CooldownTime config 100
 
 #NAME COLOURS
 team add murderer Murderer
@@ -21,6 +22,9 @@ team add innocent Innocent
 team modify murderer color red
 team modify detective color blue
 team modify innocent color green
+
+#Player attributes
+execute as @a run attribute @s minecraft:attack_damage base set 0
 
 #SETTINGS
 execute unless score TimerLength config matches -2147483648..2147483647 run scoreboard players set TimerLength config 10

@@ -4,6 +4,10 @@ function mm:controls_tick
 #DEBUG SETTINGS | PATH 2
 function mm:debug_tick
 
+#Add no damage attribute to new players
+execute as @a unless score @s joined matches 0..1 run attribute @s minecraft:attack_damage base set 0
+execute as @a unless score @s joined matches 0..1 run scoreboard players set @s joined 1
+
 #GAME START COUNTDOWN
 execute if score Countdown timer matches 1.. run scoreboard players remove Countdown timer 1
 execute if score Countdown timer matches 100 run title @a title {"text":"5","color":"yellow","bold":true}
