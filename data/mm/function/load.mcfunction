@@ -8,9 +8,11 @@ scoreboard objectives add config dummy
 scoreboard objectives add temp dummy
 scoreboard objectives add const dummy
 scoreboard objectives add retries dummy
+scoreboard objectives add MurdererCooldown dummy "Cooldown" #####
 
 scoreboard players set Const20 const 20
 scoreboard players set Const1200 const 1200
+scoreboard players set CooldownTime config 100 #####
 
 #NAME COLOURS
 team add murderer Murderer

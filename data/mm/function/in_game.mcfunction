@@ -4,12 +4,13 @@ execute as @a at @s run playsound minecraft:block.note_block.pling block @a ~ ~ 
 
 #TEAM SELECTION
 scoreboard players operation MurdererLoop temp = MurdererCountLength config
+#ASSIGN MURDERERS | PATH 3.3.1
 function mm:assign_murderers
 execute as @r[team=!murderer] run team join detective @s
 team join innocent @a[team=!murderer,team=!detective]
 
 #ROLE ITEMS
-execute as @a[team=murderer] run item replace entity @s hotbar.1 with minecraft:iron_sword
+execute as @a[team=murderer] run item replace entity @s hotbar.1 with minecraft:iron_sword{Damage:250, Enchantments:[{id:"minecraft:sharpness",lvl:255}]}
 execute as @a[team=detective] run item replace entity @s hotbar.8 with minecraft:bow
 #execute as @a[team=innocent] run item replace entity @s hotbar.0 with minecraft:bread
 #gamerule pvp true

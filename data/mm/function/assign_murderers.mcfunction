@@ -1,4 +1,4 @@
-#Recursive function to assign murderers
+#Recursive function to assign murderers | PATH 3.3.1
 
 execute as @r[team=!murderer] run team join murderer @s
 scoreboard players remove MurdererLoop temp 1
