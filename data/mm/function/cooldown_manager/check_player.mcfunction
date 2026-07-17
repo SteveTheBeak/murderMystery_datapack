@@ -1,6 +1,6 @@
 #CHECKS IF MURDERER HAS SWORD | PATH 5.1
-execute unless items entity @s hotbar.1 minecraft:iron_sword run scoreboard players add @s MurdererCooldown 1
-execute if items entity @s hotbar.1 minecraft:iron_sword run scoreboard players set @s MurdererCooldown 0
+execute unless items entity @s inventory.* minecraft:iron_sword run scoreboard players add @s MurdererCooldown 1
+execute if items entity @s inventory.* minecraft:iron_sword run scoreboard players add @s MurdererCooldown 0
 
 #GIVE SWORD AFTER SET TIME (100 TICKS) | PATH 5.1.1
 execute if score @s MurdererCooldown matches 100.. run function mm:cooldown_manager/give_sword
