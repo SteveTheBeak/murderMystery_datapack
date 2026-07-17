@@ -4,6 +4,9 @@ function mm:controls_tick
 #DEBUG SETTINGS | PATH 2
 function mm:debug_tick
 
+#Throwable sword logic
+function mm:throw_sword/cooldown_tick
+
 #Add no damage attribute to new players
 execute as @a unless score @s joined matches 0..1 run attribute @s minecraft:attack_damage base set 0
 execute as @a unless score @s joined matches 0..1 run scoreboard players set @s joined 1
@@ -23,6 +26,9 @@ execute if score Countdown timer matches 20 run playsound minecraft:block.note_b
 
 #IMMEDIATE START | PATH 3
 execute if score Countdown timer matches 0 run function mm:immediate_start
+
+#Enable fly_tick function
+function mm:throw_sword/fly_tick
 
 #5 MINUTE WARNING
 execute if score PvpTimer pvptimer matches 6000 run title @a title {"text":"5 minutes remaining","color":"red","bold":false}

@@ -1,0 +1,2 @@
+#DEBUG: Gives the throwable murderer sword directly, for testing outside a real match
+give @s minecraft:iron_sword[minecraft:enchantments={"minecraft:sharpness":255},minecraft:food={nutrition:0,saturation:0,can_always_eat:true},minecraft:consumable={consume_seconds:2147483647},minecraft:custom_data={mm_throw:1b}]
