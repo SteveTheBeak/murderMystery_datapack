@@ -10,7 +10,7 @@ execute as @r[team=!murderer] run team join detective @s
 team join innocent @a[team=!murderer,team=!detective]
 
 #ROLE ITEMS
-execute as @a[team=murderer] run item replace entity @s hotbar.1 with minecraft:iron_sword[minecraft:enchantments={"minecraft:sharpness":255},max_damage=1,damage=0]
+execute as @a[team=murderer] run item replace entity @s hotbar.1 with minecraft:iron_sword[minecraft:enchantments={"minecraft:sharpness":255},max_damage=1,damage=0,minecraft:food={nutrition:0,saturation:0,can_always_eat:true},minecraft:consumable={consume_seconds:2147483647},minecraft:custom_data={mm_throw:1b}] 1
 execute as @a[team=detective] run item replace entity @s hotbar.8 with minecraft:bow[minecraft:enchantments={"minecraft:power":255"}]
 
 #ROLE TEXT
