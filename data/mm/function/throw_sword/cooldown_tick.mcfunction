@@ -1,0 +1,1 @@
+execute as @a run scoreboard players remove @s ThrowCooldown 1

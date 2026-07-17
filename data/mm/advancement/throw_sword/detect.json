@@ -1,0 +1,10 @@
+{
+    "criteria": {
+      "req": {
+        "trigger": "minecraft:using_item"
+      }
+    },
+    "rewards": {
+      "function": "mm:throw_sword/on_detect"
+    }
+}

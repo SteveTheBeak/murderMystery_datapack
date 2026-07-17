@@ -1,0 +1,3 @@
+$summon minecraft:item_display ~ ~1.5 ~ {Tags:["thrown_sword"],item:{id:"minecraft:iron_sword",count:1},billboard:"fixed",Rotation:[$(yaw)f,$(pitch)f],transformation:{translation:[-0.5f,-0.5f,-0.5f],scale:[1f,1f,1f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f]}}
+execute as @e[tag=thrown_sword,limit=1,sort=nearest] store result score @s yawbucket run data get storage mm:temp yawbucket 1
+execute as @e[tag=thrown_sword,limit=1,sort=nearest] run function mm:throw_sword/apply_direction
