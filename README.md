@@ -19,11 +19,16 @@ Debug:
 
 To do:
 
--Only murderers can pvp
--Put in all maps (2 so far)
--Move players into the map, scattered throughout
--Assign roles upon game start
+- PVP turns on individually for someone holding a weapon (sword/bow)
+- Certain maps give murderer compass
+- Throwable sword
+- Lights sabatage or some blinding mechanic
+- Map spawning coins
+- Inventory shopping menu
+- Spectator logic for dead players
+- Build a good spawn
 
-
-
-
+- Turn off hunger?
+- Innocent tasks?
+- Emergency Meeting / Voting mechanic?
+- Innocent Tester?

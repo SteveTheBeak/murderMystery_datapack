@@ -43,4 +43,3 @@ execute if score PvpTimer pvptimer matches -1 run clear @a
 
 #KILL COOLDOWN MANAGER | PATH 5
 execute if score GameActive config matches 1 run function mm:cooldown_manager/logic
-kill @e[type=minecraft:item,nbt={Item:{id:"minecraft:iron_sword"}}]
