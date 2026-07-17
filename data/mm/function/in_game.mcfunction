@@ -11,7 +11,7 @@ team join innocent @a[team=!murderer,team=!detective]
 
 #ROLE ITEMS
 execute as @a[team=murderer] run item replace entity @s hotbar.1 with minecraft:iron_sword[minecraft:enchantments={"minecraft:sharpness":255}]
-execute as @a[team=detective] run item replace entity @s hotbar.8 with minecraft:bow
+execute as @a[team=detective] run item replace entity @s hotbar.8 with minecraft:bow[minecraft:enchantments={"minecraft:power":255"}]
 
 #ROLE TEXT
 execute as @a[team=innocent] run title @a[team=innocent] title {"text":"INNOCENT","color":"green","bold":false}
