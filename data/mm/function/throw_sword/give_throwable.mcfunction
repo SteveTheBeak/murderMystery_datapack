@@ -1,2 +1,2 @@
-#DEBUG: Gives the throwable murderer sword directly, for testing outside a real match
-give @s minecraft:iron_sword[minecraft:enchantments={"minecraft:sharpness":255},max_damage=1,damage=0,minecraft:food={nutrition:0,saturation:0,can_always_eat:true},minecraft:consumable={consume_seconds:2147483647},minecraft:custom_data={mm_throw:1b}] 1
+#Gives the murderer their throwable sword in the correct hotbar slot
+item replace entity @s hotbar.1 with minecraft:iron_sword[minecraft:enchantment_glint_override=false,minecraft:unbreakable={},minecraft:food={nutrition:0,saturation:0,can_always_eat:true},minecraft:consumable={consume_seconds:2147483647},minecraft:custom_data={mm_throw:1b}]
