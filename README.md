@@ -26,6 +26,8 @@ To do:
 - Spectator logic for dead players
 - Murderers can't kill each other
 - Setting for in-game item select
+- Work on cooldowns
+- Add bodies on ground after kill
 - Don't forget to remove team colours
 
 Maybe

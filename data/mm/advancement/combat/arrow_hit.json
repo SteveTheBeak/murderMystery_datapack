@@ -1,10 +1,17 @@
 {
-  "criteria": {
-    "req": {
-      "trigger": "minecraft:entity_hurt_player"
+    "criteria": {
+      "req": {
+        "trigger": "minecraft:entity_hurt_player",
+        "conditions": {
+          "damage": {
+            "type": {
+              "is_direct": false
+            }
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "mm:combat/on_arrow_hit"
     }
-  },
-  "rewards": {
-    "function": "mm:combat/on_arrow_hit"
-  }
 }

@@ -9,6 +9,7 @@ scoreboard objectives add temp dummy
 scoreboard objectives add const dummy
 scoreboard objectives add retries dummy
 scoreboard objectives add joined dummy
+scoreboard objectives add MeleeCooldown dummy
 
 scoreboard objectives add ThrowCooldown dummy
 scoreboard objectives add throwid dummy

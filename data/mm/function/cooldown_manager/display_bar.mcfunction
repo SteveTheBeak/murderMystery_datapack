@@ -1,0 +1,10 @@
+execute as @a[team=murderer] if score @s MeleeCooldown matches 91.. run title @s actionbar {"text":"[■□□□□□□□□□]","color":"red"}
+execute as @a[team=murderer] if score @s MeleeCooldown matches 81..90 run title @s actionbar {"text":"[■■□□□□□□□□]","color":"red"}
+execute as @a[team=murderer] if score @s MeleeCooldown matches 71..80 run title @s actionbar {"text":"[■■■□□□□□□□]","color":"gold"}
+execute as @a[team=murderer] if score @s MeleeCooldown matches 61..70 run title @s actionbar {"text":"[■■■■□□□□□□]","color":"gold"}
+execute as @a[team=murderer] if score @s MeleeCooldown matches 51..60 run title @s actionbar {"text":"[■■■■■□□□□□]","color":"yellow"}
+execute as @a[team=murderer] if score @s MeleeCooldown matches 41..50 run title @s actionbar {"text":"[■■■■■■□□□□]","color":"yellow"}
+execute as @a[team=murderer] if score @s MeleeCooldown matches 31..40 run title @s actionbar {"text":"[■■■■■■■□□□]","color":"yellow"}
+execute as @a[team=murderer] if score @s MeleeCooldown matches 21..30 run title @s actionbar {"text":"[■■■■■■■■□□]","color":"green"}
+execute as @a[team=murderer] if score @s MeleeCooldown matches 11..20 run title @s actionbar {"text":"[■■■■■■■■■□]","color":"green"}
+execute as @a[team=murderer] if score @s MeleeCooldown matches 1..10 run title @s actionbar {"text":"[■■■■■■■■■■]","color":"green"}
