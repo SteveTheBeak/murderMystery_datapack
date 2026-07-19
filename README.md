@@ -19,16 +19,16 @@ Debug:
 
 To do:
 
-- PVP turns on individually for someone holding a weapon (sword/bow)
 - Certain maps give murderer compass
-- Throwable sword
 - Lights sabatage or some blinding mechanic
 - Map spawning coins
 - Inventory shopping menu
 - Spectator logic for dead players
-- Build a good spawn
+- Murderers can't kill each other
+- Setting for in-game item select
+- Don't forget to remove team colours
 
-- Turn off hunger?
+Maybe
 - Innocent tasks?
 - Emergency Meeting / Voting mechanic?
 - Innocent Tester?
