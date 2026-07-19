@@ -41,3 +41,10 @@ execute if score MapSelectIndex config matches 5 run scoreboard players set MapC
 execute if score MapSelectIndex config matches 5 run scoreboard players set MapRadius config 180
 execute if score MapSelectIndex config matches 5 run scoreboard players set MapMaxHeight config -54
 execute if score MapSelectIndex config matches 5 run scoreboard players set MapMinHeight config -56
+
+#Underwater Base
+execute if score MapSelectIndex config matches 6 run scoreboard players set MapCenterX config -350
+execute if score MapSelectIndex config matches 6 run scoreboard players set MapCenterZ config 162
+execute if score MapSelectIndex config matches 6 run scoreboard players set MapRadius config 25
+execute if score MapSelectIndex config matches 6 run scoreboard players set MapMaxHeight config -55
+execute if score MapSelectIndex config matches 6 run scoreboard players set MapMinHeight config -57

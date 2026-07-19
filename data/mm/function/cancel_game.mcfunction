@@ -4,7 +4,6 @@ scoreboard players set GameActive config 0
 scoreboard players set Countdown timer -1
 scoreboard players set PvpTimer pvptimer -1
 scoreboard players set @a MurdererCooldown 0
-gamerule pvp false
 team empty murderer
 team empty detective
 team empty innocent

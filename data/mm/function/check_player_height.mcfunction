@@ -32,3 +32,7 @@ execute if score @s temp < MapMinHeight config if score MapSelectIndex config ma
 #If map is backrooms
 execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 5 if score @s retries matches 6.. run tp @s 306 -56 -255
 execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 5 if score @s retries matches 6.. run scoreboard players set @s retries 0
+
+#If map is underwater base
+execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 6 if score @s retries matches 6.. run tp @s -348 -57 157
+execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 6 if score @s retries matches 6.. run scoreboard players set @s retries 0
