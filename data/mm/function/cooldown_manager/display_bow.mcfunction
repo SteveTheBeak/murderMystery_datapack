@@ -1,0 +1,1 @@
+execute as @a[team=detective] if score @s BowCooldown matches 1.. run function mm:cooldown_manager/compute_bow_segment

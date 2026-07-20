@@ -1,8 +1,11 @@
 #Set a brief cooldown so holding right-click doesn't spam-launch
-scoreboard players set @s ThrowCooldown 20
+#7 seconds
+scoreboard players set @s MeleeCooldown 140
+scoreboard players set @s ActiveCooldownMax 140
 
 #Remove the sword from mainhand
-item replace entity @s weapon.mainhand with air
+item replace entity @s hotbar.1 with air
+scoreboard players set @s SwordAway 1
 
 #Give this throw a unique ID so multiple thrown swords don't interfere
 scoreboard players add GlobalThrowID throwid 1

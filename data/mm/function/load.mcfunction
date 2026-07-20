@@ -9,22 +9,24 @@ scoreboard objectives add temp dummy
 scoreboard objectives add const dummy
 scoreboard objectives add retries dummy
 scoreboard objectives add joined dummy
-scoreboard objectives add MeleeCooldown dummy
 
-scoreboard objectives add ThrowCooldown dummy
-scoreboard objectives add throwid dummy
+scoreboard objectives add MeleeCooldown dummy
+scoreboard objectives add BowCooldown dummy
+scoreboard objectives add ActiveCooldownMax dummy
 scoreboard objectives add flight_time dummy
 scoreboard objectives add spinstep dummy
 scoreboard objectives add yawbucket dummy
+scoreboard objectives add TempCalc dummy
+scoreboard objectives add SwordAway dummy
 
-scoreboard objectives add MurdererCooldown dummy "Cooldown"
+scoreboard players set BowCooldownMax const 60
 
 scoreboard players set Const8 const 8
+scoreboard players set Const10 const 10
 scoreboard players set Const20 const 20
 scoreboard players set Const1200 const 1200
 scoreboard players set Const4500 const 4500
 scoreboard players set Const36000 const 36000
-scoreboard players set CooldownTime config 100
 
 #NAME COLOURS
 team add murderer Murderer

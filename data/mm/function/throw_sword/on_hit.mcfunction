@@ -2,7 +2,7 @@
 damage @s 1000 minecraft:generic
 
 #Return the sword to the murderer's hand instantly
-execute as @a[team=murderer] run function mm:throw_sword/give_throwable
+execute as @a[team=murderer] run scoreboard players set @s SwordAway 0
 
 #Remove the flying sword and hitbox
 kill @e[tag=thrown_sword,limit=1,sort=nearest]

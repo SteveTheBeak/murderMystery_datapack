@@ -1,0 +1,1 @@
+execute as @a[team=murderer] if score @s MeleeCooldown matches 1.. run function mm:cooldown_manager/compute_melee_segment

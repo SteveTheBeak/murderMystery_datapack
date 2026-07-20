@@ -2,6 +2,11 @@
 
 execute as @a at @s run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.8
 
+#Reset cooldown values
+scoreboard players set @a MeleeCooldown 0
+scoreboard players set @a BowCooldown 0
+scoreboard players set @a SwordAway 0
+
 #TEAM SELECTION
 scoreboard players operation MurdererLoop temp = MurdererCountLength config
 #ASSIGN MURDERERS | PATH 3.3.1
