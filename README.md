@@ -29,7 +29,6 @@ To do:
 - Work on cooldowns
 - Add bodies on ground after kill
 - Players dont drop items when killed
-- Fix shooting giving sword
 - Don't forget to remove team colours
 
 Maybe

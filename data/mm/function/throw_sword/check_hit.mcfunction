@@ -1,1 +1,1 @@
-execute at @s as @a[distance=..1.5] at @s positioned ~-0.6 ~-0.6 ~-0.6 if entity @e[tag=thrown_sword_hitbox,dx=1.2,dy=2.4,dz=1.2] run function mm:throw_sword/on_hit
+execute at @s as @a[distance=..2.5,team=!murderer] at @s positioned ~-0.6 ~-0.6 ~-0.6 if entity @e[tag=thrown_sword_hitbox,dx=1.2,dy=2.4,dz=1.2] run function mm:throw_sword/on_hit

@@ -27,6 +27,8 @@ execute if score Countdown timer matches 20 run playsound minecraft:block.note_b
 #IMMEDIATE START | PATH 3
 execute if score Countdown timer matches 0 run function mm:immediate_start
 
+execute if score PvpTimer pvptimer matches 0.. run function mm:death_manager/logic
+
 #Enable fly_tick function
 function mm:throw_sword/fly_tick
 
@@ -39,7 +41,7 @@ execute if score PvpTimer pvptimer matches 1.. run scoreboard players remove Pvp
 
 #GAME END SEQUENCE | PATH 4
 execute if score PvpTimer pvptimer matches 0 run function mm:immediate_end
-execute if score PvpTimer pvptimer matches -1 run clear @a
+execute if score PvpTimer pvptimer matches 0 run clear @a
 
 #KILL COOLDOWN MANAGER | PATH 5
 function mm:cooldown_manager/logic

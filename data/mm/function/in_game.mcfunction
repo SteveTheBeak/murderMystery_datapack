@@ -2,6 +2,10 @@
 
 execute as @a at @s run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.8
 
+#Put everyone in adventure, reset death count
+gamemode adventure @a
+scoreboard players operation @a lastDeaths = @a deaths
+
 #Reset cooldown values
 scoreboard players set @a MeleeCooldown 0
 scoreboard players set @a BowCooldown 0
