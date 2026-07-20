@@ -4,9 +4,6 @@ function mm:controls_tick
 #DEBUG SETTINGS | PATH 2
 function mm:debug_tick
 
-#Throwable sword logic
-function mm:throw_sword/cooldown_tick
-
 #Add no damage attribute to new players
 execute as @a unless score @s joined matches 0..1 run attribute @s minecraft:attack_damage base set 0
 execute as @a unless score @s joined matches 0..1 run scoreboard players set @s joined 1
@@ -14,15 +11,15 @@ execute as @a unless score @s joined matches 0..1 run scoreboard players set @s 
 #GAME START COUNTDOWN
 execute if score Countdown timer matches 1.. run scoreboard players remove Countdown timer 1
 execute if score Countdown timer matches 100 run title @a title {"text":"5","color":"yellow","bold":true}
-execute if score Countdown timer matches 100 run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
+execute if score Countdown timer matches 100 run playsound minecraft:block.note_block.pling block @a -40 -55 3 2 1.2
 execute if score Countdown timer matches 80 run title @a title {"text":"4","color":"yellow","bold":true}
-execute if score Countdown timer matches 80 run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
+execute if score Countdown timer matches 80 run playsound minecraft:block.note_block.pling block @a -40 -55 3 2 1.2
 execute if score Countdown timer matches 60 run title @a title {"text":"3","color":"yellow","bold":true}
-execute if score Countdown timer matches 60 run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
+execute if score Countdown timer matches 60 run playsound minecraft:block.note_block.pling block @a -40 -55 3 2 1.2
 execute if score Countdown timer matches 40 run title @a title {"text":"2","color":"yellow","bold":true}
-execute if score Countdown timer matches 40 run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
+execute if score Countdown timer matches 40 run playsound minecraft:block.note_block.pling block @a -40 -55 3 2 1.2
 execute if score Countdown timer matches 20 run title @a title {"text":"1","color":"yellow","bold":true}
-execute if score Countdown timer matches 20 run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
+execute if score Countdown timer matches 20 run playsound minecraft:block.note_block.pling block @a -40 -55 3 2 1.2
 
 #IMMEDIATE START | PATH 3
 execute if score Countdown timer matches 0 run function mm:immediate_start

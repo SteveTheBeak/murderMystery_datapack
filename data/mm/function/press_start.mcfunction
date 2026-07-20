@@ -1,7 +1,7 @@
 #START BUTTON | PATH 1.4
 
 data remove entity @s interaction
-playsound minecraft:ui.button.click block @a ~ ~ ~ 1 1.2
+playsound minecraft:ui.button.click block @a -40 -55 3 1 1.2
 scoreboard players operation OldState temp = GameActive config
 
 #TEST IF GAME CAN START | PATH 1.4.1

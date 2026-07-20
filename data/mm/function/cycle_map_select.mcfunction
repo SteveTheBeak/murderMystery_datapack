@@ -1,7 +1,7 @@
 #MAP CYCLE | PATH 1.3
 
 data remove entity @s interaction
-playsound minecraft:ui.button.click block @a ~ ~ ~ 1 1.2
+playsound minecraft:ui.button.click block @a -43 -55 3 1 1.2
 scoreboard players add MapSelectIndex config 1
 execute if score MapSelectIndex config matches 7.. run scoreboard players set MapSelectIndex config 0
 

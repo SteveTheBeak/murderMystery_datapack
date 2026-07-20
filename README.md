@@ -35,3 +35,6 @@ Maybe
 - Innocent tasks?
 - Emergency Meeting / Voting mechanic?
 - Innocent Tester?
+
+Bugs
+- Detective gets sword when kills murderer

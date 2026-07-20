@@ -18,7 +18,6 @@ scoreboard objectives add BowCooldown dummy
 scoreboard objectives add ActiveCooldownMax dummy
 scoreboard objectives add flight_time dummy
 scoreboard objectives add spinstep dummy
-scoreboard objectives add yawbucket dummy
 scoreboard objectives add TempCalc dummy
 scoreboard objectives add SwordAway dummy
 
@@ -28,8 +27,6 @@ scoreboard players set Const8 const 8
 scoreboard players set Const10 const 10
 scoreboard players set Const20 const 20
 scoreboard players set Const1200 const 1200
-scoreboard players set Const4500 const 4500
-scoreboard players set Const36000 const 36000
 
 #NAME COLOURS
 team add murderer Murderer
@@ -38,6 +35,7 @@ team add innocent Innocent
 team modify murderer color red
 team modify detective color blue
 team modify innocent color green
+team modify murderer friendlyFire false
 
 #PLAYER ATTRIBUTES
 #No punching

@@ -16,4 +16,4 @@ execute if score CanStart config matches 0 run tellraw @a {"text":"Not enough pl
 execute if score MurdererCountLength config matches 1 if score CanStart config matches 0 run tellraw @a {"text":"Need at least 4 players","color":"red","bold":false}
 execute if score MurdererCountLength config matches 2 if score CanStart config matches 0 run tellraw @a {"text":"Need at least 8 players","color":"red","bold":false}
 execute if score MurdererCountLength config matches 3 if score CanStart config matches 0 run tellraw @a {"text":"Need at least 16 players","color":"red","bold":false}
-execute if score CanStart config matches 0 run playsound minecraft:block.note_block.bass block @a ~ ~ ~ 1 0.5
+execute if score CanStart config matches 0 run playsound minecraft:block.note_block.bass block @a -40 -55 3 1 0.5
