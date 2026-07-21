@@ -23,12 +23,12 @@ To do:
 - Lights sabatage or some blinding mechanic
 - Map spawning coins
 - Inventory shopping menu
-- Spectator logic for dead players
-- Murderers can't kill each other
 - Setting for in-game item select
-- Work on cooldowns
-- Add bodies on ground after kill
-- Players dont drop items when killed
+- TP spectators to map
+- Display winners
+- Mannequins move to ground
+- Items cant be moved in / out of inventory
+- Throwing sword enables mannequin
 - Don't forget to remove team colours
 
 Maybe

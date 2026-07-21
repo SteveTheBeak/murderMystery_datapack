@@ -1,1 +1,1 @@
-execute as @a if score @s deaths > @s lastDeaths run function mm:death_manager/on_death
+execute as @a if score @s deaths matches 1.. run function mm:death_manager/on_death

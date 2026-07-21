@@ -36,6 +36,10 @@ execute if score PvpTimer pvptimer matches 1200 run title @a title {"text":"1 mi
 #PVPTIMER DECREASE UNTIL -1
 execute if score PvpTimer pvptimer matches 1.. run scoreboard players remove PvpTimer pvptimer 1
 
+#Check which players are alive for early game end
+execute if score PvpTimer pvptimer matches 0.. unless entity @a[team=murderer] run function mm:immediate_end
+execute if score PvpTimer pvptimer matches 0.. unless entity @a[team=innocent] unless entity @a[team=detective] run function mm:immediate_end
+
 #GAME END SEQUENCE | PATH 4
 execute if score PvpTimer pvptimer matches 0 run function mm:immediate_end
 execute if score PvpTimer pvptimer matches 0 run clear @a

@@ -1,5 +1,8 @@
 #IMMEDIATE START | PATH 3
 
+clear @a
+kill @e[tag=dead_body]
+
 #TIMER SETUP
 execute run scoreboard players operation PvpTimer pvptimer = TimerLength config
 execute run scoreboard players operation PvpTimer pvptimer *= Const1200 const
