@@ -30,7 +30,7 @@ execute if score PvpTimer pvptimer matches 0.. run function mm:death_manager/log
 function mm:throw_sword/fly_tick
 
 #5 MINUTE WARNING
-execute if score PvpTimer pvptimer matches 6000 run title @a title {"text":"5 minutes remaining","color":"red","bold":false}
+execute if score PvpTimer pvptimer matches 6001 run title @a title {"text":"5 minutes remaining","color":"red","bold":false}
 #1 MINUTE WARNING
 execute if score PvpTimer pvptimer matches 1200 run title @a title {"text":"1 minute remaining","color":"red","bold":false}
 #PVPTIMER DECREASE UNTIL -1
@@ -39,6 +39,10 @@ execute if score PvpTimer pvptimer matches 1.. run scoreboard players remove Pvp
 #Check which players are alive for early game end
 execute if score PvpTimer pvptimer matches 0.. unless entity @a[team=murderer] run function mm:immediate_end
 execute if score PvpTimer pvptimer matches 0.. unless entity @a[team=innocent] unless entity @a[team=detective] run function mm:immediate_end
+
+#Settle falling mannequin body
+execute as @e[type=minecraft:mannequin,tag=falling_body] at @s if entity @s[nbt={OnGround:1b}] run data merge entity @s {immovable:1b}
+execute as @e[type=minecraft:mannequin,tag=falling_body] at @s if entity @s[nbt={OnGround:1b}] run tag @s remove falling_body
 
 #GAME END SEQUENCE | PATH 4
 execute if score PvpTimer pvptimer matches 0 run function mm:immediate_end

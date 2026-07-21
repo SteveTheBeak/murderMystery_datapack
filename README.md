@@ -26,9 +26,7 @@ To do:
 - Setting for in-game item select
 - TP spectators to map
 - Display winners
-- Mannequins move to ground
 - Items cant be moved in / out of inventory
-- Throwing sword enables mannequin
 - Don't forget to remove team colours
 
 Maybe
@@ -38,3 +36,10 @@ Maybe
 
 Bugs
 - Detective gets sword when kills murderer
+- Sword no longer given back when collided
+
+Run the following command to lock every container:
+data merge block <x> <y> <z> {Lock:"do_not_open_ever"}
+
+Same but for item frames:
+execute as @e[type=item_frame,distance=..50] run data merge entity @s {Fixed:1b}

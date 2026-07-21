@@ -1,2 +1,2 @@
 #Gives the murderer their throwable sword in the correct hotbar slot
-item replace entity @s hotbar.1 with minecraft:iron_sword[minecraft:enchantment_glint_override=false,minecraft:unbreakable={},minecraft:food={nutrition:0,saturation:0,can_always_eat:true},minecraft:consumable={consume_seconds:2147483647},minecraft:custom_data={mm_throw:1b}]
+item replace entity @s hotbar.1 with minecraft:iron_sword[minecraft:enchantment_glint_override=false,minecraft:unbreakable={},minecraft:food={nutrition:0,saturation:0,can_always_eat:true},minecraft:consumable={consume_seconds:2147483647},minecraft:attribute_modifiers=[{id:"mm:zero_damage",type:"attack_damage",amount:0.01,operation:"add_value",slot:"mainhand"}],minecraft:custom_data={mm_throw:1b}]
