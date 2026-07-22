@@ -4,7 +4,6 @@ execute as @a[team=murderer] if score @s MeleeCooldown matches 0 run function mm
 execute as @a[team=murderer] if score @s MeleeCooldown matches 0 run scoreboard players set @s MeleeCooldown -1
 
 execute as @a[team=detective] if score @s BowCooldown matches 1.. run scoreboard players remove @s BowCooldown 1
-execute as @a[team=detective] if score @s BowCooldown matches 0 run item replace entity @s hotbar.8 with minecraft:arrow 1
 execute as @a[team=detective] if score @s BowCooldown matches 0 run scoreboard players set @s BowCooldown -1
 
 function mm:cooldown_manager/display_melee

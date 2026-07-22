@@ -29,6 +29,37 @@ execute if score PvpTimer pvptimer matches 0.. run function mm:death_manager/log
 #Enable fly_tick function
 function mm:throw_sword/fly_tick
 
+
+
+#SWORD
+#Wipe and reassign only if the correct weapon isn't already in place
+execute as @a[team=murderer] if score @s SwordAway matches 0 if score @s MeleeCooldown matches ..0 unless entity @s[nbt={Inventory:[{Slot:1b,components:{"minecraft:custom_data":{mm_throw:1b}}}]}] run clear @s minecraft:iron_sword[minecraft:custom_data={mm_throw:1b}]
+execute as @a[team=murderer] if score @s SwordAway matches 0 if score @s MeleeCooldown matches ..0 unless entity @s[nbt={Inventory:[{Slot:1b,components:{"minecraft:custom_data":{mm_throw:1b}}}]}] run function mm:throw_sword/give_throwable
+
+execute as @a[team=murderer] if score @s SwordAway matches 0 if score @s MeleeCooldown matches 1.. unless entity @s[nbt={Inventory:[{Slot:1b,components:{"minecraft:custom_data":{mm_fake:1b}}}]}] run clear @s minecraft:iron_sword[minecraft:custom_data={mm_fake:1b}]
+execute as @a[team=murderer] if score @s SwordAway matches 0 if score @s MeleeCooldown matches 1.. unless entity @s[nbt={Inventory:[{Slot:1b,components:{"minecraft:custom_data":{mm_fake:1b}}}]}] run item replace entity @s hotbar.1 with minecraft:iron_sword[minecraft:attribute_modifiers=[{id:"mm:zero_damage",type:"attack_damage",amount:0,operation:"add_value",slot:"mainhand"}],minecraft:custom_data={mm_fake:1b}]
+
+#Force-remove any dropped sword sitting on the ground
+kill @e[type=item,tag=!keep]
+
+#BOW/ARROW
+#Bow: always enforce, same pattern as the sword
+execute as @a[team=detective] unless entity @s[nbt={Inventory:[{Slot:7b,components:{"minecraft:custom_data":{mm_bow:1b}}}]}] run clear @s minecraft:bow[minecraft:custom_data={mm_bow:1b}]
+execute as @a[team=detective] unless entity @s[nbt={Inventory:[{Slot:7b,components:{"minecraft:custom_data":{mm_bow:1b}}}]}] run item replace entity @s hotbar.7 with minecraft:bow[minecraft:enchantments={"minecraft:infinity":1},minecraft:enchantment_glint_override=false,minecraft:unbreakable={},minecraft:custom_data={mm_bow:1b}]
+
+#Arrow: only present when off cooldown
+execute as @a[team=detective] if score @s BowCooldown matches ..0 unless entity @s[nbt={Inventory:[{Slot:8b,components:{"minecraft:custom_data":{mm_arrow:1b}}}]}] run clear @s minecraft:arrow[minecraft:custom_data={mm_arrow:1b}]
+execute as @a[team=detective] if score @s BowCooldown matches ..0 unless entity @s[nbt={Inventory:[{Slot:8b,components:{"minecraft:custom_data":{mm_arrow:1b}}}]}] run item replace entity @s hotbar.8 with minecraft:arrow[minecraft:custom_data={mm_arrow:1b}] 1
+
+#Arrow: strip any stray copy while on cooldown (it shouldn't exist anywhere during this window)
+execute as @a[team=detective] if score @s BowCooldown matches 1.. run clear @s minecraft:arrow[minecraft:custom_data={mm_arrow:1b}]
+
+#Force-remove any dropped bow/arrow sitting on the ground
+kill @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_bow:1b}}}}]
+kill @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_arrow:1b}}}}]
+
+
+
 #5 MINUTE WARNING
 execute if score PvpTimer pvptimer matches 6001 run title @a title {"text":"5 minutes remaining","color":"red","bold":false}
 #1 MINUTE WARNING

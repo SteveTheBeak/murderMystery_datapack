@@ -26,8 +26,10 @@ To do:
 - Setting for in-game item select
 - TP spectators to map
 - Display winners
-- Items cant be moved in / out of inventory
+- Murderer killing player plays kill sound for everyone
 - Don't forget to remove team colours
+
+- shooting one innocent player gives you blindness for 15 seconds, a second time gives you blindness and slowness for 15 seconds, and a third time kills the detective
 
 Maybe
 - Innocent tasks?
@@ -36,7 +38,6 @@ Maybe
 
 Bugs
 - Detective gets sword when kills murderer
-- Sword no longer given back when collided
 
 Run the following command to lock every container:
 data merge block <x> <y> <z> {Lock:"do_not_open_ever"}
