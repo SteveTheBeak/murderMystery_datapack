@@ -1,0 +1,1 @@
+$execute positioned $(x) $(y) $(z) positioned ~ ~1.2 ~ run summon minecraft:item_display ~ ~ ~ {Tags:["mm_detective_pickup"],item:{id:"minecraft:bow",count:1,components:{"minecraft:enchantments":{"minecraft:infinity":1}}},billboard:"vertical",transformation:{scale:[0.75f,0.75f,0.75f]}}

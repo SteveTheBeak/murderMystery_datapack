@@ -12,3 +12,4 @@ team empty innocent
 
 clear @a
 kill @e[tag=dead_body]
+kill @e[tag=mm_detective_pickup]

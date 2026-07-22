@@ -40,7 +40,7 @@ Bugs
 - Detective gets sword when kills murderer
 
 Run the following command to lock every container:
-data merge block <x> <y> <z> {Lock:"do_not_open_ever"}
+/data merge block <x> <y> <z> {lock:{id:"minecraft:any",count:1,components:{"minecraft:custom_name":'"do_not_open_ever"'}}}
 
 Same but for item frames:
 execute as @e[type=item_frame,distance=..50] run data merge entity @s {Fixed:1b}

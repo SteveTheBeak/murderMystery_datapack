@@ -59,6 +59,10 @@ kill @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_bow:1b}}}}]
 kill @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_arrow:1b}}}}]
 
 
+#Detective bow pickup — visual only, proximity-based, innocents only
+execute as @e[tag=mm_detective_pickup] at @s as @a[team=innocent,distance=..1.5,sort=nearest,limit=1] at @s run function mm:death_manager/become_detective
+
+
 
 #5 MINUTE WARNING
 execute if score PvpTimer pvptimer matches 6001 run title @a title {"text":"5 minutes remaining","color":"red","bold":false}

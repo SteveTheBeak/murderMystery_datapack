@@ -10,5 +10,6 @@ title @a clear
 tellraw @a {"text":"Game cancelled.","color":"gray","italic":true}
 
 kill @e[tag=dead_body]
+kill @e[tag=mm_detective_pickup]
 
 execute as @e[type=text_display,tag=start_button_display,limit=1] run data merge entity @s {text:{text:"START GAME",color:"green",bold:true}}
