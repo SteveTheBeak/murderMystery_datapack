@@ -1,3 +1,16 @@
+#Reset all per-player cooldowns and combat state for the new round
+scoreboard players set @a MeleeCooldown -1
+scoreboard players set @a BowCooldown -1
+scoreboard players set @a ActiveCooldownMax 0
+scoreboard players set @a SwordAway 0
+scoreboard players set @a deaths 0
+scoreboard players set @a retries 0
+scoreboard players set @a HeightCheckCount 0
+scoreboard players set @a spinstep 0
+scoreboard players set @a flight_time 0
+scoreboard players set @a TempCalc 0
+tag @a remove mm_was_murderer
+
 #TEST IF GAME CAN START | PATH 1.4.1
 
 scoreboard players set PlayerCount config 0

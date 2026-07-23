@@ -27,7 +27,12 @@ To do:
 - TP spectators to map
 - Display winners
 - Murderer killing player plays kill sound for everyone
+- 5 second end-game screen
+
 - Don't forget to remove team colours
+
+- palace trapdoors may be an issue
+
 
 - shooting one innocent player gives you blindness for 15 seconds, a second time gives you blindness and slowness for 15 seconds, and a third time kills the detective
 
@@ -36,11 +41,19 @@ Maybe
 - Emergency Meeting / Voting mechanic?
 - Innocent Tester?
 
-Bugs
-- Detective gets sword when kills murderer
+Bugs:
+When murderers killed, names dont show up on end game screen
+When placing item in anvil, grindstone, etc. itemgets duplicated back into inventory
 
 Run the following command to lock every container:
 /data merge block <x> <y> <z> {lock:{id:"minecraft:any",count:1,components:{"minecraft:custom_name":'"do_not_open_ever"'}}}
 
 Same but for item frames:
 execute as @e[type=item_frame,distance=..50] run data merge entity @s {Fixed:1b}
+
+Place invisible item frame with gold inside:
+/summon item_frame ~ ~ ~ {Item:{id:"minecraft:gold_ingot",Count:1b},Facing:1b,Invisible:1b}
+
+
+Armor stand tags for gold:
+The skeld: skeld_gold
