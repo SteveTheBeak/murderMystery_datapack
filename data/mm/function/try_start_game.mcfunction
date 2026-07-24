@@ -9,6 +9,7 @@ scoreboard players set @a HeightCheckCount 0
 scoreboard players set @a spinstep 0
 scoreboard players set @a flight_time 0
 scoreboard players set @a TempCalc 0
+scoreboard players set @a InnocentHits 0
 tag @a remove mm_was_murderer
 
 #TEST IF GAME CAN START | PATH 1.4.1

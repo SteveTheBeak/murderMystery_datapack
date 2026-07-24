@@ -3,3 +3,4 @@ team join detective @s
 scoreboard players set @s BowCooldown -1
 function mm:combat/give_detective
 tellraw @a {"text":"Someone picked up the bow!","color":"gold","bold":true}
+playsound minecraft:entity.item.pickup block @s ~ ~ ~ 2 1.2
