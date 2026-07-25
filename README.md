@@ -25,9 +25,8 @@ To do:
 - Inventory shopping menu
 - Setting for in-game item select
 - TP spectators to map
-- Display winners
 - Murderer killing player plays kill sound for everyone
-- 5 second end-game screen
+- Prevent throwing gold
 
 - Don't forget to remove team colours
 
@@ -42,8 +41,7 @@ Maybe
 - Innocent Tester?
 
 Bugs:
-When murderers killed, names dont show up on end game screen
-When placing item in anvil, grindstone, etc. itemgets duplicated back into inventory
+When placing item in anvil, grindstone, etc. item gets duplicated back into inventory
 
 Run the following command to lock every container:
 /data merge block <x> <y> <z> {lock:{id:"minecraft:any",count:1,components:{"minecraft:custom_name":'"do_not_open_ever"'}}}

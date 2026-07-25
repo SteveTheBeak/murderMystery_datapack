@@ -12,6 +12,8 @@ execute store result storage mm:temp yaw float 1 run data get entity @s Rotation
 data modify storage mm:temp uuid set from entity @s UUID
 function mm:death_manager/spawn_body with storage mm:temp
 
+function mm:death_manager/tp_to_death with storage mm:temp
+
 #If the detective died, announce it and drop their bow for someone to claim
 execute if entity @s[team=detective] run tellraw @a {"text":"The detective has been killed!","color":"gold","bold":true}
 execute if entity @s[team=detective] run function mm:death_manager/drop_detective_bow with storage mm:temp

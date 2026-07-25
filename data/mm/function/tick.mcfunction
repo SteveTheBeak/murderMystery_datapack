@@ -29,6 +29,12 @@ execute if score PvpTimer pvptimer matches 0.. run function mm:death_manager/log
 #Enable fly_tick function
 function mm:throw_sword/fly_tick
 
+#GOLD DROP
+execute if score PvpTimer pvptimer matches 0.. run function mm:gold/gold_tick
+
+#Tag any freshly-dropped gold so it survives cleanup and is identifiable for pickup later
+execute as @e[type=item,nbt={Item:{id:"minecraft:gold_ingot"}}] run tag @s add mm_gold
+execute as @e[type=item,nbt={Item:{id:"minecraft:gold_ingot"}}] run tag @s add keep
 
 
 #SWORD

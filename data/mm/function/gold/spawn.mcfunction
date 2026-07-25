@@ -1,0 +1,1 @@
+execute as @e[tag=skeld_gold,tag=!gold_active,sort=random,limit=1] at @s run function mm:gold/spawn_at_stand
