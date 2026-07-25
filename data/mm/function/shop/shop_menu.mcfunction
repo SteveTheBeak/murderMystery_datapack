@@ -1,0 +1,1 @@
+item replace entity @s inventory.0 with minecraft:gold_ingot[minecraft:item_name=[{"text":"You have ","color":"green"},{"score":{"name":"@s","objective":"gold"}},{"text":" gold","color":"green"}]]

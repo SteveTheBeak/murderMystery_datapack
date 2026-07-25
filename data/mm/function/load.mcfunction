@@ -29,14 +29,21 @@ scoreboard players set Const10 const 10
 scoreboard players set Const20 const 20
 scoreboard players set Const1200 const 1200
 
-#NAME COLOURS
+#TEAM LOGIC
 team add murderer Murderer
 team add detective Detective
 team add innocent Innocent
+
 team modify murderer color red
 team modify detective color blue
 team modify innocent color green
+
 team modify murderer friendlyFire false
+
+team modify murderer nametagVisibility never
+team modify detective nametagVisibility never
+team modify innocent nametagVisibility never
+
 
 #PLAYER ATTRIBUTES
 #No punching

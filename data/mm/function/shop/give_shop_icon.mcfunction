@@ -1,0 +1,1 @@
+item replace entity @s inventory.8 with minecraft:emerald[minecraft:custom_data={mm_shop:1b},minecraft:item_name={"text":"Shop","color":"green"}]

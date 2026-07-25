@@ -1,5 +1,7 @@
 #IMMEDIATE START | PATH 3
 
+scoreboard players set GameActive config 1
+
 clear @a
 kill @e[tag=dead_body]
 kill @e[tag=mm_detective_pickup]

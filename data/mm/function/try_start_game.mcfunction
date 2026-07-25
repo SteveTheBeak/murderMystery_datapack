@@ -10,6 +10,7 @@ scoreboard players set @a spinstep 0
 scoreboard players set @a flight_time 0
 scoreboard players set @a TempCalc 0
 scoreboard players set @a InnocentHits 0
+scoreboard players set @a gold 0
 scoreboard players set GoldTimer gold 0
 tag @a remove mm_was_murderer
 tag @e[tag=gold_active] remove gold_active

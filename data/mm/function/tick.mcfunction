@@ -69,6 +69,42 @@ kill @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_arrow:1b}}}
 execute as @e[tag=mm_detective_pickup] at @s as @a[team=innocent,distance=..1.5,sort=nearest,limit=1] at @s run function mm:death_manager/become_detective
 
 
+#Detect and correct any duplicate copies of the throwable sword in inventory
+execute as @a[team=murderer] store result score @s TempCalc run clear @s minecraft:iron_sword[minecraft:custom_data={mm_throw:1b}] 0
+execute as @a[team=murderer] if score @s TempCalc matches 2.. run clear @s minecraft:iron_sword[minecraft:custom_data={mm_throw:1b}]
+execute as @a[team=murderer] if score @s TempCalc matches 2.. run function mm:throw_sword/give_throwable
+#Same for the fake cooldown sword
+execute as @a[team=murderer] store result score @s TempCalc run clear @s minecraft:iron_sword[minecraft:custom_data={mm_fake:1b}] 0
+execute as @a[team=murderer] if score @s TempCalc matches 2.. run clear @s minecraft:iron_sword[minecraft:custom_data={mm_fake:1b}]
+execute as @a[team=murderer] if score @s TempCalc matches 2.. run item replace entity @s hotbar.1 with minecraft:iron_sword[minecraft:attribute_modifiers=[{id:"mm:zero_damage",type:"attack_damage",amount:0,operation:"add_value",slot:"mainhand"},{id:"mm:zero_knockback",type:"attack_knockback",amount:0,operation:"add_value",slot:"mainhand"}],minecraft:custom_data={mm_fake:1b}]
+
+#Detective's bow and arrow
+execute as @a[team=detective] store result score @s TempCalc run clear @s minecraft:bow[minecraft:custom_data={mm_bow:1b}] 0
+execute as @a[team=detective] if score @s TempCalc matches 2.. run clear @s minecraft:bow[minecraft:custom_data={mm_bow:1b}]
+execute as @a[team=detective] if score @s TempCalc matches 2.. run item replace entity @s hotbar.7 with minecraft:bow[minecraft:enchantments={"minecraft:infinity":1},minecraft:enchantment_glint_override=false,minecraft:unbreakable={},minecraft:custom_data={mm_bow:1b}]
+
+execute as @a[team=detective] store result score @s TempCalc run clear @s minecraft:arrow[minecraft:custom_data={mm_arrow:1b}] 0
+execute as @a[team=detective] if score @s TempCalc matches 2.. run clear @s minecraft:arrow[minecraft:custom_data={mm_arrow:1b}]
+execute as @a[team=detective] if score @s TempCalc matches 2.. run item replace entity @s hotbar.8 with minecraft:arrow[minecraft:custom_data={mm_arrow:1b}] 1
+
+
+#Convert picked-up gold into score, then remove the physical copies entirely
+execute as @a store result score @s TempCalc run clear @s minecraft:gold_ingot[minecraft:custom_data={mm_gold:1b}] 0
+execute as @a if score @s TempCalc matches 1.. run scoreboard players operation @s gold += @s TempCalc
+execute as @a if score @s TempCalc matches 1.. run clear @s minecraft:gold_ingot[minecraft:custom_data={mm_gold:1b}]
+
+#Detect if player clicks shop icon
+execute as @a if items entity @s player.cursor minecraft:emerald[minecraft:custom_data={mm_shop:1b}] run function mm:shop/shop_menu
+
+#SHOP
+#Keep the shop icon pinned in place, immune to both duplication and relocation
+execute as @a store result score @s TempCalc run clear @s minecraft:emerald[minecraft:custom_data={mm_shop:1b}] 0
+execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 0 run function mm:shop/give_shop_icon
+execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 2.. run clear @s minecraft:emerald[minecraft:custom_data={mm_shop:1b}]
+execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 2.. run function mm:shop/give_shop_icon
+execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 1 unless entity @s[nbt={Inventory:[{Slot:8b,components:{"minecraft:custom_data":{mm_shop:1b}}}]}] run clear @s minecraft:emerald[minecraft:custom_data={mm_shop:1b}]
+execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 1 unless entity @s[nbt={Inventory:[{Slot:8b,components:{"minecraft:custom_data":{mm_shop:1b}}}]}] run function mm:shop/give_shop_icon
+
 
 #5 MINUTE WARNING
 execute if score PvpTimer pvptimer matches 6001 run title @a title {"text":"5 minutes remaining","color":"red","bold":false}
