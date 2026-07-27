@@ -11,6 +11,12 @@ scoreboard objectives add retries dummy
 scoreboard objectives add joined dummy
 scoreboard objectives add InnocentHits dummy
 scoreboard objectives add gold dummy
+scoreboard objectives add shopOpen dummy
+scoreboard objectives add ShopCalc dummy
+
+scoreboard objectives add Move minecraft.custom:minecraft.walk_one_cm
+scoreboard objectives add Sprint minecraft.custom:minecraft.sprint_one_cm
+scoreboard objectives add Crouch minecraft.custom:minecraft.crouch_one_cm
 
 scoreboard objectives add deaths deathCount
 
@@ -21,6 +27,8 @@ scoreboard objectives add flight_time dummy
 scoreboard objectives add spinstep dummy
 scoreboard objectives add TempCalc dummy
 scoreboard objectives add SwordAway dummy
+
+data modify storage mm:shop items set value [{tag:"mm_shop_gold",slot:0,itemId:"minecraft:gold_ingot",giveFunction:"mm:shop/shop_menu"}]
 
 scoreboard players set BowCooldownMax const 60
 
@@ -39,6 +47,7 @@ team modify detective color blue
 team modify innocent color green
 
 team modify murderer friendlyFire false
+team modify detective friendlyFire false
 
 team modify murderer nametagVisibility never
 team modify detective nametagVisibility never

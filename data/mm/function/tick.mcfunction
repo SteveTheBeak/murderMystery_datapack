@@ -33,8 +33,8 @@ function mm:throw_sword/fly_tick
 execute if score PvpTimer pvptimer matches 0.. run function mm:gold/gold_tick
 
 #Tag any freshly-dropped gold so it survives cleanup and is identifiable for pickup later
-execute as @e[type=item,nbt={Item:{id:"minecraft:gold_ingot"}}] run tag @s add mm_gold
-execute as @e[type=item,nbt={Item:{id:"minecraft:gold_ingot"}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{id:"minecraft:gold_ingot",components:{"minecraft:custom_data":{mm_gold:1b}}}}] run tag @s add mm_gold
+execute as @e[type=item,nbt={Item:{id:"minecraft:gold_ingot",components:{"minecraft:custom_data":{mm_gold:1b}}}}] run tag @s add keep
 
 
 #SWORD
@@ -95,6 +95,19 @@ execute as @a if score @s TempCalc matches 1.. run clear @s minecraft:gold_ingot
 
 #Detect if player clicks shop icon
 execute as @a if items entity @s player.cursor minecraft:emerald[minecraft:custom_data={mm_shop:1b}] run function mm:shop/shop_menu
+execute as @a if items entity @s player.cursor minecraft:emerald[minecraft:custom_data={mm_shop:1b}] run scoreboard players set @s shopOpen 1
+execute as @a if items entity @s player.cursor minecraft:emerald[minecraft:custom_data={mm_shop:1b}] run scoreboard players set @s Move 0
+execute as @a[scores={Move=1..}] run scoreboard players set @s shopOpen 0
+execute as @a if items entity @s player.cursor minecraft:emerald[minecraft:custom_data={mm_shop:1b}] run scoreboard players set @s Sprint 0
+execute as @a[scores={Sprint=1..}] run scoreboard players set @s shopOpen 0
+execute as @a if items entity @s player.cursor minecraft:emerald[minecraft:custom_data={mm_shop:1b}] run scoreboard players set @s Crouch 0
+execute as @a[scores={Crouch=1..}] run scoreboard players set @s shopOpen 0
+execute as @a if score @s shopOpen matches 0 run function mm:shop/close_shop
+
+execute as @a if score @s shopOpen matches 1 run function mm:shop/enforce_all
+execute as @a if score @s shopOpen matches 1 run item replace entity @s player.cursor with air
+
+
 
 #SHOP
 #Keep the shop icon pinned in place, immune to both duplication and relocation

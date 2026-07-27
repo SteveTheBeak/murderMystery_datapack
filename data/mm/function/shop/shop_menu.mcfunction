@@ -1,1 +1,2 @@
-item replace entity @s inventory.0 with minecraft:gold_ingot[minecraft:item_name=[{"text":"You have ","color":"green"},{"score":{"name":"@s","objective":"gold"}},{"text":" gold","color":"green"}]]
+execute store result storage mm:temp gold int 1 run scoreboard players get @s gold
+function mm:shop/give_gold_item with storage mm:temp

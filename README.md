@@ -21,19 +21,16 @@ To do:
 
 - Certain maps give murderer compass
 - Lights sabatage or some blinding mechanic
-- Map spawning coins
 - Inventory shopping menu
 - Setting for in-game item select
-- TP spectators to map
 - Murderer killing player plays kill sound for everyone
-- Prevent throwing gold
+- Glowing dropped bow
 
 - Don't forget to remove team colours
 
 - palace trapdoors may be an issue
 
 
-- shooting one innocent player gives you blindness for 15 seconds, a second time gives you blindness and slowness for 15 seconds, and a third time kills the detective
 
 Maybe
 - Innocent tasks?
@@ -41,7 +38,7 @@ Maybe
 - Innocent Tester?
 
 Bugs:
-When placing item in anvil, grindstone, etc. item gets duplicated back into inventory
+
 
 Run the following command to lock every container:
 /data merge block <x> <y> <z> {lock:{id:"minecraft:any",count:1,components:{"minecraft:custom_name":'"do_not_open_ever"'}}}
@@ -68,3 +65,7 @@ Raise 5 blocks
 
 Summon invisible, no gravity armour stand with tag
 /summon armor_stand ~ ~ ~ {Tags:["skeld_gold"],NoGravity:1b,Invisible:1b}
+
+
+Adding future items in shop:
+data modify storage mm:shop items append value {tag:"mm_shop_bandage",slot:1,itemId:"minecraft:paper",giveFunction:"mm:shop/give_bandage"}

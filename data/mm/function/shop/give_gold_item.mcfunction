@@ -1,0 +1,1 @@
+$item replace entity @s inventory.0 with minecraft:gold_ingot[minecraft:custom_data={mm_shop_gold:1b},minecraft:item_name={"text":"You have $(gold) gold","color":"green"}]
