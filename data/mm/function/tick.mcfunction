@@ -42,9 +42,6 @@ execute as @e[type=item,nbt={Item:{id:"minecraft:gold_ingot",components:{"minecr
 execute as @a[team=murderer] if score @s SwordAway matches 0 if score @s MeleeCooldown matches ..0 unless entity @s[nbt={Inventory:[{Slot:1b,components:{"minecraft:custom_data":{mm_throw:1b}}}]}] run clear @s minecraft:iron_sword[minecraft:custom_data={mm_throw:1b}]
 execute as @a[team=murderer] if score @s SwordAway matches 0 if score @s MeleeCooldown matches ..0 unless entity @s[nbt={Inventory:[{Slot:1b,components:{"minecraft:custom_data":{mm_throw:1b}}}]}] run function mm:throw_sword/give_throwable
 
-execute as @a[team=murderer] if score @s SwordAway matches 0 if score @s MeleeCooldown matches 1.. unless entity @s[nbt={Inventory:[{Slot:1b,components:{"minecraft:custom_data":{mm_fake:1b}}}]}] run clear @s minecraft:iron_sword[minecraft:custom_data={mm_fake:1b}]
-execute as @a[team=murderer] if score @s SwordAway matches 0 if score @s MeleeCooldown matches 1.. unless entity @s[nbt={Inventory:[{Slot:1b,components:{"minecraft:custom_data":{mm_fake:1b}}}]}] run item replace entity @s hotbar.1 with minecraft:iron_sword[minecraft:attribute_modifiers=[{id:"mm:zero_damage",type:"attack_damage",amount:0,operation:"add_value",slot:"mainhand"}],minecraft:custom_data={mm_fake:1b}]
-
 #Force-remove any dropped sword sitting on the ground
 kill @e[type=item,tag=!keep]
 

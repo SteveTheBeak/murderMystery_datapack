@@ -10,9 +10,6 @@ kill @e[tag=mm_detective_pickup]
 execute run scoreboard players operation PvpTimer pvptimer = TimerLength config
 execute run scoreboard players operation PvpTimer pvptimer *= Const1200 const
 
-#MURDERER COUNT INDEX
-execute run scoreboard players operation Murderers murderers = MurdererCountIndex config
-
 #TELEPORT
 execute store result storage mm:temp x int 1 run scoreboard players get MapCenterX config
 execute store result storage mm:temp z int 1 run scoreboard players get MapCenterZ config
