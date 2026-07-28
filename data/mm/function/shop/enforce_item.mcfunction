@@ -5,7 +5,3 @@ $execute if score @s ShopCalc matches 2.. run clear @s $(itemId)[minecraft:custo
 $execute if score @s ShopCalc matches 2.. run function $(giveFunction)
 $execute if score @s ShopCalc matches 1 unless entity @s[nbt={Inventory:[{Slot:$(slot)b,components:{"minecraft:custom_data":{$(tag):1b}}}]}] run clear @s $(itemId)[minecraft:custom_data={$(tag):1b}]
 $execute if score @s ShopCalc matches 1 unless entity @s[nbt={Inventory:[{Slot:$(slot)b,components:{"minecraft:custom_data":{$(tag):1b}}}]}] run function $(giveFunction)
-
-#Clear corresponding hotbar slot as well
-$execute if score @s ShopCalc matches 1 unless entity @s[nbt={Inventory:[{Hotbar:$(slot)b,components:{"minecraft:custom_data":{$(tag):1b}}}]}] run clear @s $(itemId)[minecraft:custom_data={$(tag):1b}]
-$execute if score @s ShopCalc matches 1 unless entity @s[nbt={Inventory:[{Hotbar:$(slot)b,components:{"minecraft:custom_data":{$(tag):1b}}}]}] run function $(giveFunction)

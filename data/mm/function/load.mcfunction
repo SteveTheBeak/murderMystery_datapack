@@ -28,7 +28,9 @@ scoreboard objectives add spinstep dummy
 scoreboard objectives add TempCalc dummy
 scoreboard objectives add SwordAway dummy
 
-data modify storage mm:shop items set value [{tag:"mm_shop_gold",slot:0,itemId:"minecraft:gold_ingot",giveFunction:"mm:shop/shop_menu"}]
+
+data modify storage mm:shop items set value [{tag:"mm_shop_gold",slot:0,itemId:"minecraft:gold_ingot",giveFunction:"mm:shop/shop_menu"},{tag:"mm_shop_item",slot:11,itemId:"minecraft:potion",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:14,itemId:"minecraft:bow",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:15,itemId:"minecraft:totem_of_undying",giveFunction:"mm:shop/give_shop_items"}]
+
 
 scoreboard players set BowCooldownMax const 60
 

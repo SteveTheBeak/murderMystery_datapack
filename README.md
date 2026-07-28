@@ -46,25 +46,16 @@ Run the following command to lock every container:
 Same but for item frames:
 execute as @e[type=item_frame,distance=..50] run data merge entity @s {Fixed:1b}
 
-Place invisible item frame with gold inside:
-/summon item_frame ~ ~ ~ {Item:{id:"minecraft:gold_ingot",Count:1b},Facing:1b,Invisible:1b}
 
 
+Gold dropping speeds for each map:
+Skeld: 8-15 seconds
+Airship: 6-12 seconds
 
-Armor stand tags for gold:
-The skeld: skeld_gold
+gold spawning on roof:
+170 -34 46
 
-Make Armor stands invisible, no gravity:
-execute as @e[type=armor_stand,distance=..70] at @s run data merge entity @e[type=armor_stand,limit=1,sort=nearest] {Invisible:1b,NoGravity:1b}
 
-Add tag
-/execute as @e[type=armor_stand,distance=..70] at @s run tag @s add skeld_gold
-
-Raise 5 blocks
-/execute as @e[type=armor_stand,distance=..70] at @s run tp @s ~ ~5 ~
-
-Summon invisible, no gravity armour stand with tag
-/summon armor_stand ~ ~ ~ {Tags:["skeld_gold"],NoGravity:1b,Invisible:1b}
 
 
 Adding future items in shop:
