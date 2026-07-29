@@ -29,7 +29,7 @@ scoreboard objectives add TempCalc dummy
 scoreboard objectives add SwordAway dummy
 
 
-data modify storage mm:shop items set value [{tag:"mm_shop_gold",slot:0,itemId:"minecraft:gold_ingot",giveFunction:"mm:shop/shop_menu"},{tag:"mm_shop_item",slot:11,itemId:"minecraft:potion",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:14,itemId:"minecraft:bow",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:15,itemId:"minecraft:totem_of_undying",giveFunction:"mm:shop/give_shop_items"}]
+data modify storage mm:shop items set value [{tag:"mm_shop_gold",slot:0,rawSlot:9,itemId:"minecraft:gold_ingot",giveFunction:"mm:shop/shop_menu"},{tag:"mm_shop_item",slot:11,rawSlot:20,itemId:"minecraft:potion",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:14,rawSlot:23,itemId:"minecraft:bow",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:15,rawSlot:24,itemId:"minecraft:totem_of_undying",giveFunction:"mm:shop/give_shop_items"}]
 
 
 scoreboard players set BowCooldownMax const 60
@@ -67,6 +67,23 @@ execute unless score MurdererCountLength config matches -2147483648..2147483647 
 execute unless score TimerIndex config matches -2147483648..2147483647 run scoreboard players set TimerIndex config 0
 execute unless score MurdererCountIndex config matches -2147483648..2147483647 run scoreboard players set MurdererCountIndex config 0
 execute unless score MapSelectIndex config matches -2147483648..2147483647 run scoreboard players set MapSelectIndex config 0
+
+#Toggle shop items enables
+#Common
+execute unless score shop_invisibility config matches -2147483648..2147483647 run scoreboard players set shop_invisibility config 1
+#Innocent
+execute unless score shop_innocent_speed config matches -2147483648..2147483647 run scoreboard players set shop_innocent_speed config 1
+execute unless score shop_innocent_bow config matches -2147483648..2147483647 run scoreboard players set shop_innocent_bow config 1
+execute unless score shop_innocent_extralife config matches -2147483648..2147483647 run scoreboard players set shop_innocent_extralife config 1
+#Detective
+execute unless score shop_detective_glow config matches -2147483648..2147483647 run scoreboard players set shop_detective_glow config 1
+execute unless score shop_detective_freeze config matches -2147483648..2147483647 run scoreboard players set shop_detective_freeze config 1
+execute unless score shop_detective_extralife config matches -2147483648..2147483647 run scoreboard players set shop_detective_extralife config 1
+#Murderer
+execute unless score shop_murderer_darkness config matches -2147483648..2147483647 run scoreboard players set shop_murderer_darkness config 1
+execute unless score shop_murderer_glow config matches -2147483648..2147483647 run scoreboard players set shop_murderer_glow config 1
+execute unless score shop_murderer_rocket config matches -2147483648..2147483647 run scoreboard players set shop_murderer_rocket config 1
+
 
 execute unless score GameActive config matches -2147483648..2147483647 run scoreboard players set GameActive config 0
 execute unless score DebugMode config matches -2147483648..2147483647 run scoreboard players set DebugMode config 1

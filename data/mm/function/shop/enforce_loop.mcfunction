@@ -3,6 +3,7 @@ $data modify storage mm:temp tag set from storage mm:shop items[$(index)].tag
 $data modify storage mm:temp slot set from storage mm:shop items[$(index)].slot
 $data modify storage mm:temp itemId set from storage mm:shop items[$(index)].itemId
 $data modify storage mm:temp giveFunction set from storage mm:shop items[$(index)].giveFunction
+$data modify storage mm:temp rawSlot set from storage mm:shop items[$(index)].rawSlot
 function mm:shop/enforce_item with storage mm:temp
 $scoreboard players set ShopLoopIndex temp $(index)
 scoreboard players add ShopLoopIndex temp 1

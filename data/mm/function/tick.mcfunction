@@ -112,8 +112,8 @@ execute as @a store result score @s TempCalc run clear @s minecraft:emerald[mine
 execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 0 run function mm:shop/give_shop_icon
 execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 2.. run clear @s minecraft:emerald[minecraft:custom_data={mm_shop:1b}]
 execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 2.. run function mm:shop/give_shop_icon
-execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 1 unless entity @s[nbt={Inventory:[{Slot:8b,components:{"minecraft:custom_data":{mm_shop:1b}}}]}] run clear @s minecraft:emerald[minecraft:custom_data={mm_shop:1b}]
-execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 1 unless entity @s[nbt={Inventory:[{Slot:8b,components:{"minecraft:custom_data":{mm_shop:1b}}}]}] run function mm:shop/give_shop_icon
+execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 1 unless entity @s[nbt={Inventory:[{Slot:17b,components:{"minecraft:custom_data":{mm_shop:1b}}}]}] run clear @s minecraft:emerald[minecraft:custom_data={mm_shop:1b}]
+execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 1 unless entity @s[nbt={Inventory:[{Slot:17b,components:{"minecraft:custom_data":{mm_shop:1b}}}]}] run function mm:shop/give_shop_icon
 
 
 #5 MINUTE WARNING

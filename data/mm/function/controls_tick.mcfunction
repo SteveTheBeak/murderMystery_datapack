@@ -11,3 +11,6 @@ execute as @e[type=interaction,tag=map_select] if data entity @s interaction run
 
 #START BUTTON | PATH 1.4
 execute as @e[type=interaction,tag=start_button] if data entity @s interaction run function mm:press_start
+
+#TOGGLE SHOP ITEMS | PATH 1.5
+execute as @e[type=interaction,tag=setting_shop] if data entity @s interaction run function mm:cycle_toggle_items
