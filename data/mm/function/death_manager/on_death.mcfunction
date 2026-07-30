@@ -1,3 +1,5 @@
+execute as @s at @a run playsound minecraft:entity.player.death player @a ~ ~ ~ 2 1.2
+
 clear @s
 
 gamemode spectator @s

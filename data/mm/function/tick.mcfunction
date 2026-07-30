@@ -11,15 +11,15 @@ execute as @a unless score @s joined matches 0..1 run scoreboard players set @s 
 #GAME START COUNTDOWN
 execute if score Countdown timer matches 1.. run scoreboard players remove Countdown timer 1
 execute if score Countdown timer matches 100 run title @a title {"text":"5","color":"yellow","bold":true}
-execute if score Countdown timer matches 100 run playsound minecraft:block.note_block.pling block @a -40 -55 3 2 1.2
+execute if score Countdown timer matches 100 at @a run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
 execute if score Countdown timer matches 80 run title @a title {"text":"4","color":"yellow","bold":true}
-execute if score Countdown timer matches 80 run playsound minecraft:block.note_block.pling block @a -40 -55 3 2 1.2
+execute if score Countdown timer matches 80 at @a run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
 execute if score Countdown timer matches 60 run title @a title {"text":"3","color":"yellow","bold":true}
-execute if score Countdown timer matches 60 run playsound minecraft:block.note_block.pling block @a -40 -55 3 2 1.2
+execute if score Countdown timer matches 60 at @a run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
 execute if score Countdown timer matches 40 run title @a title {"text":"2","color":"yellow","bold":true}
-execute if score Countdown timer matches 40 run playsound minecraft:block.note_block.pling block @a -40 -55 3 2 1.2
+execute if score Countdown timer matches 40 at @a run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
 execute if score Countdown timer matches 20 run title @a title {"text":"1","color":"yellow","bold":true}
-execute if score Countdown timer matches 20 run playsound minecraft:block.note_block.pling block @a -40 -55 3 2 1.2
+execute if score Countdown timer matches 20 at @a run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
 
 #IMMEDIATE START | PATH 3
 execute if score Countdown timer matches 0 run function mm:immediate_start
@@ -35,6 +35,20 @@ execute if score PvpTimer pvptimer matches 0.. run function mm:gold/gold_tick
 #Tag any freshly-dropped gold so it survives cleanup and is identifiable for pickup later
 execute as @e[type=item,nbt={Item:{id:"minecraft:gold_ingot",components:{"minecraft:custom_data":{mm_gold:1b}}}}] run tag @s add mm_gold
 execute as @e[type=item,nbt={Item:{id:"minecraft:gold_ingot",components:{"minecraft:custom_data":{mm_gold:1b}}}}] run tag @s add keep
+
+#Tag purchased shop items so they survive cleanup too
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_invisibility_real:1b}}}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_speed_real:1b}}}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_bow_real:1b}}}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_oneshot_arrow:1b}}}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_innocent_extralife_real:1b}}}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_detective_glow_real:1b}}}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_freeze_real:1b}}}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_detective_extralife_real:1b}}}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_darkness_real:1b}}}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_murderer_glow_real:1b}}}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_rocket_real:1b}}}}] run tag @s add keep
+
 
 
 #SWORD
@@ -58,6 +72,7 @@ execute as @a[team=detective] if score @s BowCooldown matches ..0 unless entity 
 execute as @a[team=detective] if score @s BowCooldown matches 1.. run clear @s minecraft:arrow[minecraft:custom_data={mm_arrow:1b}]
 
 #Disable picking up stray one-shot arrows 
+execute as @e[type=arrow,tag=!mm_handled,nbt={item:{components:{"minecraft:custom_data":{mm_oneshot_arrow:1b}}}}] run data merge entity @s {pickup:0b}
 execute as @e[type=arrow,tag=!mm_handled,nbt={item:{components:{"minecraft:custom_data":{mm_oneshot_arrow:1b}}}}] run function mm:shop/clear_item with entity @s
 execute as @e[type=arrow,tag=!mm_handled,nbt={item:{components:{"minecraft:custom_data":{mm_oneshot_arrow:1b}}}}] run tag @s add mm_handled
 
@@ -106,7 +121,16 @@ execute as @a[scores={Crouch=1..}] run scoreboard players set @s shopOpen 0
 execute as @a if score @s shopOpen matches 0 run function mm:shop/close_shop
 
 execute as @a if score @s shopOpen matches 1 run function mm:shop/enforce_all
+
+#Lock purchased shop items - no relocation, no duplication, no free refill (must run before the cursor wipe below)
+execute as @a run data modify storage mm:temp3 index set value 0
+execute as @a run function mm:shop/enforce_loop_real with storage mm:temp3
+
 execute as @a if score @s shopOpen matches 1 run item replace entity @s player.cursor with air
+
+#Prevent purchased shop items from being dropped
+data modify storage mm:temp4 index set value 0
+function mm:shop/prevent_drop_real_loop with storage mm:temp4
 
 
 

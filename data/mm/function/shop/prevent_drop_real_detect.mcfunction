@@ -1,0 +1,3 @@
+$execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{$(tag):1b}}}}] run data modify storage mm:temp4 Thrower set from entity @s Thrower
+$execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{$(tag):1b}}}}] run function mm:shop/prevent_drop_real_give with storage mm:temp4
+$execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{$(tag):1b}}}}] run kill @s

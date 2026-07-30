@@ -19,7 +19,6 @@ Spawn start button:
 
 
 
-
 Spawn shop toggle buttons:
 Common, invisibility
 /summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_invisibility"],width:1.0,height:1.0}
@@ -97,7 +96,8 @@ Maybe
 - Innocent Tester?
 
 Bugs:
-
+- Hear death sound twice when killing (Cause is known, but should fix)
+- As an innocent, using number pads to move arrow into bow or bow into arrow slot removes the arrow
 
 Run the following command to lock every container:
 /data merge block <x> <y> <z> {lock:{id:"minecraft:any",count:1,components:{"minecraft:custom_name":'"do_not_open_ever"'}}}

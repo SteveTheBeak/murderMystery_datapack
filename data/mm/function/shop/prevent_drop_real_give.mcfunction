@@ -1,0 +1,1 @@
+$execute as @a[nbt={UUID:$(Thrower)}] run function $(giveFunction) with storage mm:temp4

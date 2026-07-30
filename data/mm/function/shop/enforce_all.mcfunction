@@ -20,5 +20,5 @@ execute if entity @s[team=murderer] if items entity @s player.cursor minecraft:c
 
 execute unless score @s ChosenItem matches -1 run function mm:shop/chosen_item
 
-data modify storage mm: index set value 0
-function mm:shop/enforce_loop with storage mm:
+data modify storage mm:temp index set value 0
+function mm:shop/enforce_loop with storage mm:temp
