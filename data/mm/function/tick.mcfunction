@@ -57,6 +57,10 @@ execute as @a[team=detective] if score @s BowCooldown matches ..0 unless entity 
 #Arrow: strip any stray copy while on cooldown (it shouldn't exist anywhere during this window)
 execute as @a[team=detective] if score @s BowCooldown matches 1.. run clear @s minecraft:arrow[minecraft:custom_data={mm_arrow:1b}]
 
+#Disable picking up stray one-shot arrows 
+execute as @e[type=arrow,tag=!mm_handled,nbt={item:{components:{"minecraft:custom_data":{mm_oneshot_arrow:1b}}}}] run function mm:shop/clear_item with entity @s
+execute as @e[type=arrow,tag=!mm_handled,nbt={item:{components:{"minecraft:custom_data":{mm_oneshot_arrow:1b}}}}] run tag @s add mm_handled
+
 #Force-remove any dropped bow/arrow sitting on the ground
 kill @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_bow:1b}}}}]
 kill @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_arrow:1b}}}}]

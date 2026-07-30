@@ -1,7 +1,14 @@
 {
     "criteria": {
       "req": {
-        "trigger": "minecraft:using_item"
+        "trigger": "minecraft:using_item",
+        "conditions": {
+          "item": {
+            "predicates": {
+              "minecraft:custom_data": {"mm_throw": true}
+            }
+          }
+        }
       }
     },
     "rewards": {

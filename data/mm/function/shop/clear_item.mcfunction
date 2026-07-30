@@ -1,0 +1,1 @@
+$execute as @a[nbt={UUID:$(Owner)}] run item replace entity @s hotbar.4 with air

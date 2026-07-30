@@ -13,6 +13,8 @@ scoreboard objectives add gold dummy
 scoreboard objectives add shopOpen dummy
 scoreboard objectives add ShopCalc dummy
 scoreboard objectives add DisplaySegment dummy
+scoreboard objectives add ChosenItem dummy
+scoreboard objectives add HasShopItem dummy
 
 scoreboard objectives add Move minecraft.custom:minecraft.walk_one_cm
 scoreboard objectives add Sprint minecraft.custom:minecraft.sprint_one_cm
@@ -29,7 +31,7 @@ scoreboard objectives add TempCalc dummy
 scoreboard objectives add SwordAway dummy
 
 
-data modify storage mm:shop items set value [{tag:"mm_shop_gold",slot:0,rawSlot:9,itemId:"minecraft:gold_ingot",giveFunction:"mm:shop/shop_menu"},{tag:"mm_shop_item",slot:11,rawSlot:20,itemId:"minecraft:potion",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:14,rawSlot:23,itemId:"minecraft:bow",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:15,rawSlot:24,itemId:"minecraft:totem_of_undying",giveFunction:"mm:shop/give_shop_items"}]
+data modify storage mm:shop items set value [{tag:"mm_shop_gold",slot:0,rawSlot:9,itemId:"minecraft:gold_ingot",giveFunction:"mm:shop/shop_menu"},{tag:"mm_shop_item",slot:11,rawSlot:20,itemId:"minecraft:potion",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:12,rawSlot:21,itemId:"minecraft:potion",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:14,rawSlot:23,itemId:"minecraft:bow",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:15,rawSlot:24,itemId:"minecraft:totem_of_undying",giveFunction:"mm:shop/give_shop_items"}]
 
 
 scoreboard players set BowCooldownMax const 60

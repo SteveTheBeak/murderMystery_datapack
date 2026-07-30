@@ -84,6 +84,8 @@ To do:
 - Murderer killing player plays kill sound for everyone
 
 - Don't forget to remove team colours
+- Left click text display to cycle backwards
+- Make all players hear starting countdown
 
 - palace trapdoors may be an issue
 
