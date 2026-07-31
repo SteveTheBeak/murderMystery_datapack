@@ -130,7 +130,7 @@ execute as @a if score @s shopOpen matches 1 run function mm:shop/enforce_all
 execute as @a run data modify storage mm:temp3 index set value 0
 execute as @a run function mm:shop/enforce_loop_real with storage mm:temp3
 
-execute as @a if score @s shopOpen matches 1 run item replace entity @s player.cursor with air
+execute as @a if score @s shopOpen matches 1 if items entity @s player.cursor *[minecraft:custom_data={mm_shop_item:1b}] run item replace entity @s player.cursor with air
 
 #Prevent purchased shop items from being dropped
 data modify storage mm:temp4 index set value 0

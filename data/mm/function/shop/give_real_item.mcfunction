@@ -1,1 +1,1 @@
-$item replace entity @s hotbar.$(rawSlot) with $(itemDef)
+$item replace entity @s $(giveSlot) with $(itemDef)
