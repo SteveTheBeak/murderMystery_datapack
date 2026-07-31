@@ -1,0 +1,2 @@
+execute as @a[scores={TotemUsed=1..}] run clear @s minecraft:heart_of_the_sea[minecraft:custom_data={mm_shop_innocent_extralife_display:1b}]
+execute as @a[scores={TotemUsed=1..}] run scoreboard players set @s TotemUsed 0

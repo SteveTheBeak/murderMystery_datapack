@@ -3,6 +3,7 @@ $data modify storage mm:temp4 tag set from storage mm:shop realItems[$(index)].t
 $data modify storage mm:temp4 giveFunction set from storage mm:shop realItems[$(index)].giveFunction
 $data modify storage mm:temp4 itemDef set from storage mm:shop realItems[$(index)].itemDef
 $data modify storage mm:temp4 rawSlot set from storage mm:shop realItems[$(index)].rawSlot
+$data modify storage mm:temp4 giveSlot set from storage mm:shop realItems[$(index)].giveSlot
 function mm:shop/prevent_drop_real_detect with storage mm:temp4
 $scoreboard players set DropLoopIndex temp $(index)
 scoreboard players add DropLoopIndex temp 1

@@ -2,7 +2,8 @@ scoreboard players set @s HasShopItem 0
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{mm_shop_invisibility_real:1b}}}]}] run scoreboard players set @s HasShopItem 1
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{mm_shop_speed_real:1b}}}]}] run scoreboard players set @s HasShopItem 1
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{mm_shop_bow_real:1b}}}]}] run scoreboard players set @s HasShopItem 1
-execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{mm_shop_innocent_extralife_real:1b}}}]}] run scoreboard players set @s HasShopItem 1
+execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{mm_shop_innocent_extralife_display:1b}}}]}] run scoreboard players set @s HasShopItem 1
+execute if entity @s[nbt={equipment:{offhand:{components:{"minecraft:custom_data":{mm_shop_innocent_extralife_real:1b}}}}}] run scoreboard players set @s HasShopItem 1
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{mm_shop_detective_glow_real:1b}}}]}] run scoreboard players set @s HasShopItem 1
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{mm_shop_freeze_real:1b}}}]}] run scoreboard players set @s HasShopItem 1
 execute if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{mm_shop_detective_extralife_real:1b}}}]}] run scoreboard players set @s HasShopItem 1
@@ -37,7 +38,8 @@ execute if score @s ChosenItem matches 3 if score @s HasShopItem matches 0 if sc
 #totem
 execute if score @s ChosenItem matches 4 if score @s HasShopItem matches 0 if score @s gold matches ..19 run tellraw @s {"text":"Not enough gold!","color":"red"}
 execute if score @s ChosenItem matches 4 if score @s HasShopItem matches 0 if score @s gold matches ..19 at @s run playsound minecraft:entity.villager.no block @a ~ ~ ~ 1 1.2
-execute if score @s ChosenItem matches 4 if score @s HasShopItem matches 0 if score @s gold matches 20.. run item replace entity @s hotbar.4 with minecraft:totem_of_undying[minecraft:custom_data={mm_shop_innocent_extralife_real:1b},minecraft:custom_name={"text":"Extra Life","color":"aqua","italic":false}]
+execute if score @s ChosenItem matches 4 if score @s HasShopItem matches 0 if score @s gold matches 20.. run item replace entity @s hotbar.4 with minecraft:heart_of_the_sea[minecraft:custom_data={mm_shop_innocent_extralife_display:1b},minecraft:custom_name={"text":"Extra Life","color":"aqua","italic":false}]
+execute if score @s ChosenItem matches 4 if score @s HasShopItem matches 0 if score @s gold matches 20.. run item replace entity @s weapon.offhand with minecraft:totem_of_undying[minecraft:custom_data={mm_shop_innocent_extralife_real:1b}]
 execute if score @s ChosenItem matches 4 if score @s HasShopItem matches 0 if score @s gold matches 20.. run scoreboard players remove @s gold 20
 
 #Detective
