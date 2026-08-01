@@ -73,18 +73,7 @@ Debug:
 
 
 To do:
-
-- Certain maps give murderer compass
-
-- Murderer killing player plays kill sound for everyone
-
-- Don't forget to remove team colours
-- Left click text display to cycle backwards
-- Make all players hear starting countdown
-
-- palace trapdoors may be an issue
-
-
+- randomize map feature
 
 Maybe
 - Innocent tasks?
@@ -92,11 +81,8 @@ Maybe
 - Innocent Tester?
 
 Bugs:
-- Hear death sound twice when killing (Cause is known, but should fix)
 - End-game text is too large
 
-
-- destroy stray arrows from last round
 
 Run the following command to lock every container:
 /data merge block <x> <y> <z> {lock:{id:"minecraft:any",count:1,components:{"minecraft:custom_name":'"do_not_open_ever"'}}}

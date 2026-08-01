@@ -1,4 +1,4 @@
-execute as @s at @a run playsound minecraft:entity.player.death player @a ~ ~ ~ 2 1.2
+execute as @s at @s run execute as @a[distance=17..] at @s run playsound minecraft:entity.player.death player @s ~ ~ ~ 2 1.2
 
 clear @s
 
