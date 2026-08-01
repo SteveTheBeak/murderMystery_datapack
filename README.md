@@ -78,8 +78,7 @@ Debug:
 To do:
 
 - Certain maps give murderer compass
-- Inventory shopping menu
-- Setting for in-game item select
+
 - Murderer killing player plays kill sound for everyone
 
 - Don't forget to remove team colours
@@ -97,7 +96,14 @@ Maybe
 
 Bugs:
 - Hear death sound twice when killing (Cause is known, but should fix)
-- As an innocent, using number pads to move arrow into bow or bow into arrow slot removes the arrow
+- moving purchased sho pitems into hotbar item removes it
+- End-game text is too large
+
+- gold spawning on roof:
+    170 -34 46
+
+- Vines grow on sewer trapdoor in museum
+- destroy stray arrows from last round
 
 Run the following command to lock every container:
 /data merge block <x> <y> <z> {lock:{id:"minecraft:any",count:1,components:{"minecraft:custom_name":'"do_not_open_ever"'}}}
@@ -111,8 +117,7 @@ Gold dropping speeds for each map:
 Skeld: 8-15 seconds
 Airship: 6-12 seconds
 
-gold spawning on roof:
-170 -34 46
+
 
 
 

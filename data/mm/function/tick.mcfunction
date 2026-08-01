@@ -44,16 +44,16 @@ execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_speed_real:1b}}}}] run tag @s add keep
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_bow_real:1b}}}}] run tag @s add keep
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_oneshot_arrow:1b}}}}] run tag @s add keep
-execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_innocent_extralife_real:1b}}}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_extralife_real:1b}}}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_extralife_display:1b}}}}] run tag @s add keep
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_detective_glow_real:1b}}}}] run tag @s add keep
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_freeze_real:1b}}}}] run tag @s add keep
-execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_detective_extralife_real:1b}}}}] run tag @s add keep
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_darkness_real:1b}}}}] run tag @s add keep
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_murderer_glow_real:1b}}}}] run tag @s add keep
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_rocket_real:1b}}}}] run tag @s add keep
-execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_innocent_extralife_display:1b}}}}] run tag @s add keep
 
-
+#Regive purchased shop items that got hotkey-swapped with the murderer's sword or detective's bow/arrow
+function mm:shop/stop_swap
 
 #SWORD
 #Wipe and reassign only if the correct weapon isn't already in place
@@ -126,9 +126,16 @@ execute as @a if score @s shopOpen matches 0 run function mm:shop/close_shop
 
 execute as @a if score @s shopOpen matches 1 run function mm:shop/enforce_all
 
+#Failsafe: if the extra-life totem and its display icon got swapped, put them back in their correct slots before enforcement runs
+execute as @a if items entity @s hotbar.4 minecraft:totem_of_undying[minecraft:custom_data={mm_shop_extralife_real:1b}] if items entity @s weapon.offhand minecraft:heart_of_the_sea[minecraft:custom_data={mm_shop_extralife_display:1b}] run item replace entity @s weapon.offhand with minecraft:totem_of_undying[minecraft:custom_data={mm_shop_extralife_real:1b}]
+execute as @a if items entity @s hotbar.4 minecraft:totem_of_undying[minecraft:custom_data={mm_shop_extralife_real:1b}] if items entity @s weapon.offhand minecraft:totem_of_undying[minecraft:custom_data={mm_shop_extralife_real:1b}] run item replace entity @s hotbar.4 with minecraft:heart_of_the_sea[minecraft:custom_data={mm_shop_extralife_display:1b},minecraft:custom_name={"text":"Extra Life","color":"aqua","italic":false}]
+
 #Lock purchased shop items - no relocation, no duplication, no free refill (must run before the cursor wipe below)
 execute as @a run data modify storage mm:temp3 index set value 0
 execute as @a run function mm:shop/enforce_loop_real with storage mm:temp3
+
+#If the shop bow is present but the arrow got removed by a hotkey swap, restore it
+execute as @a if entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{mm_shop_bow_real:1b}}}]}] unless entity @s[nbt={Inventory:[{components:{"minecraft:custom_data":{mm_oneshot_arrow:1b}}}]}] run item replace entity @s hotbar.5 with minecraft:arrow[minecraft:custom_data={mm_oneshot_arrow:1b}]
 
 execute as @a if score @s shopOpen matches 1 if items entity @s player.cursor *[minecraft:custom_data={mm_shop_item:1b}] run item replace entity @s player.cursor with air
 
@@ -147,6 +154,11 @@ execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matche
 execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 1 unless entity @s[nbt={Inventory:[{Slot:17b,components:{"minecraft:custom_data":{mm_shop:1b}}}]}] run clear @s minecraft:emerald[minecraft:custom_data={mm_shop:1b}]
 execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 1 unless entity @s[nbt={Inventory:[{Slot:17b,components:{"minecraft:custom_data":{mm_shop:1b}}}]}] run function mm:shop/give_shop_icon
 
+#Make players glow at 2 minutes
+execute if score PvpTimer pvptimer matches 2400 run title @a title {"text":""}
+execute if score PvpTimer pvptimer matches 2400 run title @a subtitle {"text":"Players are now glowing!","color":"aqua","bold":false}
+execute if score PvpTimer pvptimer matches 2400 run effect give @e[team=innocent] glowing infinite 1
+execute if score PvpTimer pvptimer matches 2400 run effect give @e[team=detective] glowing infinite 1
 
 #5 MINUTE WARNING
 execute if score PvpTimer pvptimer matches 6001 run title @a title {"text":"5 minutes remaining","color":"red","bold":false}

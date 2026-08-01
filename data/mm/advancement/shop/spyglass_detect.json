@@ -1,0 +1,17 @@
+{
+    "criteria": {
+      "req": {
+        "trigger": "minecraft:using_item",
+        "conditions": {
+          "item": {
+            "predicates": {
+              "minecraft:custom_data": {"mm_shop_detective_glow_real": true}
+            }
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "mm:shop/spyglass_on_use"
+    }
+}
