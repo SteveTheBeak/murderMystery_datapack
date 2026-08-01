@@ -29,6 +29,12 @@ execute if score PvpTimer pvptimer matches 0.. run function mm:death_manager/log
 #Run function to clear totem display after used
 function mm:shop/clear_extralife_display
 
+#Run function to give back sword after freeze
+function mm:shop/freeze_tick
+
+#Run function to enable the decoy
+function mm:shop/decoy_tick
+
 #Enable fly_tick function
 function mm:throw_sword/fly_tick
 
@@ -49,7 +55,7 @@ execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_detective_glow_real:1b}}}}] run tag @s add keep
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_freeze_real:1b}}}}] run tag @s add keep
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_darkness_real:1b}}}}] run tag @s add keep
-execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_murderer_glow_real:1b}}}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_murderer_deceive_real:1b}}}}] run tag @s add keep
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_rocket_real:1b}}}}] run tag @s add keep
 
 #Regive purchased shop items that got hotkey-swapped with the murderer's sword or detective's bow/arrow

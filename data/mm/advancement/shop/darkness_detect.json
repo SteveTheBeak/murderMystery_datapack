@@ -1,0 +1,17 @@
+{
+    "criteria": {
+      "req": {
+        "trigger": "minecraft:using_item",
+        "conditions": {
+          "item": {
+            "predicates": {
+              "minecraft:custom_data": {"mm_shop_darkness_real": true}
+            }
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "mm:shop/darkness_on_use"
+    }
+}

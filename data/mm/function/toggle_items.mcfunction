@@ -29,8 +29,8 @@ execute as @e[tag=shop_detective_extralife_display] if score shop_detective_extr
 execute as @e[tag=shop_murderer_darkness_display] if score shop_murderer_darkness config matches 1 run data merge entity @s {text:{color:"green"}}
 execute as @e[tag=shop_murderer_darkness_display] if score shop_murderer_darkness config matches 0 run data merge entity @s {text:{color:"red"}}
 
-execute as @e[tag=shop_murderer_glow_display] if score shop_murderer_glow config matches 1 run data merge entity @s {text:{color:"green"}}
-execute as @e[tag=shop_murderer_glow_display] if score shop_murderer_glow config matches 0 run data merge entity @s {text:{color:"red"}}
+execute as @e[tag=shop_murderer_deceive_display] if score shop_murderer_deceive config matches 1 run data merge entity @s {text:{color:"green"}}
+execute as @e[tag=shop_murderer_deceive_display] if score shop_murderer_deceive config matches 0 run data merge entity @s {text:{color:"red"}}
 
 execute as @e[tag=shop_murderer_rocket_display] if score shop_murderer_rocket config matches 1 run data merge entity @s {text:{color:"green"}}
 execute as @e[tag=shop_murderer_rocket_display] if score shop_murderer_rocket config matches 0 run data merge entity @s {text:{color:"red"}}

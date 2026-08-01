@@ -1,0 +1,17 @@
+{
+    "criteria": {
+      "req": {
+        "trigger": "minecraft:using_item",
+        "conditions": {
+          "item": {
+            "predicates": {
+              "minecraft:custom_data": {"mm_shop_murderer_deceive_real": true}
+            }
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "mm:shop/deceive_on_use"
+    }
+}

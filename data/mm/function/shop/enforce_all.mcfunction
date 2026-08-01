@@ -15,7 +15,7 @@ execute if entity @s[team=detective] if items entity @s player.cursor minecraft:
 
 #Murderer
 execute if entity @s[team=murderer] if items entity @s player.cursor minecraft:sculk_sensor[minecraft:custom_data={mm_shop_item:1b}] run scoreboard players set @s ChosenItem 8
-execute if entity @s[team=murderer] if items entity @s player.cursor minecraft:sea_lantern[minecraft:custom_data={mm_shop_item:1b}] run scoreboard players set @s ChosenItem 9
+execute if entity @s[team=murderer] if items entity @s player.cursor minecraft:player_head[minecraft:custom_data={mm_shop_item:1b}] run scoreboard players set @s ChosenItem 9
 execute if entity @s[team=murderer] if items entity @s player.cursor minecraft:crossbow[minecraft:custom_data={mm_shop_item:1b}] run scoreboard players set @s ChosenItem 10
 
 execute unless score @s ChosenItem matches -1 run function mm:shop/chosen_item

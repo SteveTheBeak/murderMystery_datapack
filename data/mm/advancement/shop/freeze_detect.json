@@ -1,0 +1,17 @@
+{
+    "criteria": {
+      "req": {
+        "trigger": "minecraft:using_item",
+        "conditions": {
+          "item": {
+            "predicates": {
+              "minecraft:custom_data": {"mm_shop_freeze_real": true}
+            }
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "mm:shop/freeze_on_use"
+    }
+}

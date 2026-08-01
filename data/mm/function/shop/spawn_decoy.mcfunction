@@ -1,0 +1,2 @@
+$summon minecraft:mannequin ~ ~ ~ {Tags:["mm_decoy"],profile:{id:$(uuid)},hide_description:true,Invulnerable:1b}
+execute as @e[tag=mm_decoy,sort=nearest,limit=1] run scoreboard players set @s DecoyTimer 300

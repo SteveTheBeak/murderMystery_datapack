@@ -1,0 +1,17 @@
+{
+    "criteria": {
+      "req": {
+        "trigger": "minecraft:shot_crossbow",
+        "conditions": {
+          "item": {
+            "predicates": {
+              "minecraft:custom_data": {"mm_shop_rocket_real": true}
+            }
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "mm:shop/rocket_on_use"
+    }
+}

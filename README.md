@@ -47,15 +47,12 @@ Detective, extra life
 Murderer, darkness
 /summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_murderer_darkness"],width:1.0,height:1.0}
 /summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_murderer_darkness_display"],text:{text:"Give Players Darkness",color:"aqua"},billboard:"fixed"}
-Murderer, glow
-/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_murderer_glow"],width:1.0,height:1.0}
-/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_murderer_glow_display"],text:{text:"Make Players Glow",color:"aqua"},billboard:"fixed"}
+Murderer, deceive
+/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_murderer_deceive"],width:1.0,height:1.0}
+/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_murderer_deceive_display"],text:{text:"Deception",color:"aqua"},billboard:"fixed"}
 Murderer, rocket
 /summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_murderer_rocket"],width:1.0,height:1.0}
 /summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_murderer_rocket_display"],text:{text:"Rocket Launcher",color:"aqua"},billboard:"fixed"}
-
-
-
 
 
 
@@ -96,13 +93,9 @@ Maybe
 
 Bugs:
 - Hear death sound twice when killing (Cause is known, but should fix)
-- moving purchased sho pitems into hotbar item removes it
 - End-game text is too large
 
-- gold spawning on roof:
-    170 -34 46
 
-- Vines grow on sewer trapdoor in museum
 - destroy stray arrows from last round
 
 Run the following command to lock every container:

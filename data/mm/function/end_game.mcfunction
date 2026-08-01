@@ -11,6 +11,7 @@ team empty innocent
 clear @a
 kill @e[tag=dead_body]
 kill @e[tag=mm_detective_pickup]
+kill @e[tag=mm_decoy]
 
 kill @e[type=item_frame]
 kill @e[type=item,tag=mm_gold]

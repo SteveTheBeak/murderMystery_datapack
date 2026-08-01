@@ -42,9 +42,9 @@ execute if entity @s[tag=shop_murderer_darkness] store result score TempCalc tem
 execute if entity @s[tag=shop_murderer_darkness] if score TempCalc temp matches 1 run scoreboard players set shop_murderer_darkness config 0
 execute if entity @s[tag=shop_murderer_darkness] if score TempCalc temp matches 0 run scoreboard players set shop_murderer_darkness config 1
 
-execute if entity @s[tag=shop_murderer_glow] store result score TempCalc temp run scoreboard players get shop_murderer_glow config
-execute if entity @s[tag=shop_murderer_glow] if score TempCalc temp matches 1 run scoreboard players set shop_murderer_glow config 0
-execute if entity @s[tag=shop_murderer_glow] if score TempCalc temp matches 0 run scoreboard players set shop_murderer_glow config 1
+execute if entity @s[tag=shop_murderer_deceive] store result score TempCalc temp run scoreboard players get shop_murderer_deceive config
+execute if entity @s[tag=shop_murderer_deceive] if score TempCalc temp matches 1 run scoreboard players set shop_murderer_deceive config 0
+execute if entity @s[tag=shop_murderer_deceive] if score TempCalc temp matches 0 run scoreboard players set shop_murderer_deceive config 1
 
 execute if entity @s[tag=shop_murderer_rocket] store result score TempCalc temp run scoreboard players get shop_murderer_rocket config
 execute if entity @s[tag=shop_murderer_rocket] if score TempCalc temp matches 1 run scoreboard players set shop_murderer_rocket config 0

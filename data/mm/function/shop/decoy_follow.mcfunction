@@ -1,0 +1,1 @@
+execute as @a[scores={DecoyTimer=1..}] at @s run tp @e[tag=mm_decoy,sort=nearest,limit=1] @s

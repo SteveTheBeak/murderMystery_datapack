@@ -50,7 +50,7 @@ execute if score @s ChosenItem matches 5 if score @s HasShopItem matches 0 if sc
 #ice
 execute if score @s ChosenItem matches 6 if score @s HasShopItem matches 0 if score @s gold matches ..9 run tellraw @s {"text":"Not enough gold!","color":"red"}
 execute if score @s ChosenItem matches 6 if score @s HasShopItem matches 0 if score @s gold matches ..9 at @s run playsound minecraft:entity.villager.no block @a ~ ~ ~ 1 1.2
-execute if score @s ChosenItem matches 6 if score @s HasShopItem matches 0 if score @s gold matches 10.. run item replace entity @s hotbar.4 with minecraft:ice[minecraft:custom_data={mm_shop_freeze_real:1b},minecraft:custom_name={"text":"Freeze Murderers","color":"aqua","italic":false}]
+execute if score @s ChosenItem matches 6 if score @s HasShopItem matches 0 if score @s gold matches 10.. run item replace entity @s hotbar.4 with minecraft:ice[minecraft:custom_data={mm_shop_freeze_real:1b},minecraft:custom_name={"text":"Freeze Murderers","color":"aqua","italic":false},minecraft:food={nutrition:0,saturation:0,can_always_eat:true},minecraft:consumable={consume_seconds:2147483647}]
 execute if score @s ChosenItem matches 6 if score @s HasShopItem matches 0 if score @s gold matches 10.. run scoreboard players remove @s gold 10
 #totem
 execute if score @s ChosenItem matches 7 if score @s HasShopItem matches 0 if score @s gold matches ..19 run tellraw @s {"text":"Not enough gold!","color":"red"}
@@ -63,17 +63,17 @@ execute if score @s ChosenItem matches 7 if score @s HasShopItem matches 0 if sc
 #sculk sensor
 execute if score @s ChosenItem matches 8 if score @s HasShopItem matches 0 if score @s gold matches ..4 run tellraw @s {"text":"Not enough gold!","color":"red"}
 execute if score @s ChosenItem matches 8 if score @s HasShopItem matches 0 if score @s gold matches ..4 at @s run playsound minecraft:entity.villager.no block @a ~ ~ ~ 1 1.2
-execute if score @s ChosenItem matches 8 if score @s HasShopItem matches 0 if score @s gold matches 5.. run item replace entity @s hotbar.4 with minecraft:sculk_sensor[minecraft:custom_data={mm_shop_darkness_real:1b},minecraft:custom_name={"text":"Give Players Darkness","color":"aqua","italic":false}]
+execute if score @s ChosenItem matches 8 if score @s HasShopItem matches 0 if score @s gold matches 5.. run item replace entity @s hotbar.4 with minecraft:sculk_sensor[minecraft:custom_data={mm_shop_darkness_real:1b},minecraft:custom_name={"text":"Give Players Darkness","color":"aqua","italic":false},minecraft:food={nutrition:0,saturation:0,can_always_eat:true},minecraft:consumable={consume_seconds:2147483647}]
 execute if score @s ChosenItem matches 8 if score @s HasShopItem matches 0 if score @s gold matches 5.. run scoreboard players remove @s gold 5
-#sea lantern
+#player head
 execute if score @s ChosenItem matches 9 if score @s HasShopItem matches 0 if score @s gold matches ..9 run tellraw @s {"text":"Not enough gold!","color":"red"}
 execute if score @s ChosenItem matches 9 if score @s HasShopItem matches 0 if score @s gold matches ..9 at @s run playsound minecraft:entity.villager.no block @a ~ ~ ~ 1 1.2
-execute if score @s ChosenItem matches 9 if score @s HasShopItem matches 0 if score @s gold matches 10.. run item replace entity @s hotbar.4 with minecraft:sea_lantern[minecraft:custom_data={mm_shop_murderer_glow_real:1b},minecraft:custom_name={"text":"Make Players Glow","color":"aqua","italic":false}]
+execute if score @s ChosenItem matches 9 if score @s HasShopItem matches 0 if score @s gold matches 10.. run item replace entity @s hotbar.4 with minecraft:player_head[minecraft:custom_data={mm_shop_murderer_deceive_real:1b},minecraft:custom_name={"text":"Transform into random player","color":"aqua","italic":false},minecraft:food={nutrition:0,saturation:0,can_always_eat:true},minecraft:consumable={consume_seconds:2147483647}]
 execute if score @s ChosenItem matches 9 if score @s HasShopItem matches 0 if score @s gold matches 10.. run scoreboard players remove @s gold 10
 #crossbow
 execute if score @s ChosenItem matches 10 if score @s HasShopItem matches 0 if score @s gold matches ..19 run tellraw @s {"text":"Not enough gold!","color":"red"}
 execute if score @s ChosenItem matches 10 if score @s HasShopItem matches 0 if score @s gold matches ..19 at @s run playsound minecraft:entity.villager.no block @a ~ ~ ~ 1 1.2
-execute if score @s ChosenItem matches 10 if score @s HasShopItem matches 0 if score @s gold matches 20.. run item replace entity @s hotbar.4 with minecraft:crossbow[minecraft:custom_data={mm_shop_rocket_real:1b},minecraft:custom_name={"text":"Rocket Launcher","color":"aqua","italic":false}]
+execute if score @s ChosenItem matches 10 if score @s HasShopItem matches 0 if score @s gold matches 20.. run item replace entity @s hotbar.4 with minecraft:crossbow[minecraft:custom_data={mm_shop_rocket_real:1b},minecraft:custom_name={"text":"Rocket Launcher","color":"aqua","italic":false},minecraft:enchantments={"minecraft:multishot":1},minecraft:charged_projectiles=[{id:"minecraft:firework_rocket",count:1,components:{"minecraft:fireworks":{explosions:[{shape:"large_ball",colors:[16711680],has_trail:false,has_twinkle:false}],flight_duration:1}}}]]
 execute if score @s ChosenItem matches 10 if score @s HasShopItem matches 0 if score @s gold matches 20.. run scoreboard players remove @s gold 20
 
 
