@@ -11,4 +11,3 @@ execute as @a[team=detective] if score @s InnocentHits matches 2 run tellraw @s 
 
 execute as @a[team=detective] if score @s InnocentHits matches 3.. run damage @s 1000 minecraft:generic
 execute as @a[team=detective] if score @s InnocentHits matches 3.. run tellraw @s {"text":"You killed three innocents!","color":"red"}
-execute as @a[team=detective] if score @s InnocentHits matches 3.. run function mm:death_manager/on_death
