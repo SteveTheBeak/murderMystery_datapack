@@ -74,6 +74,7 @@ Debug:
 
 To do:
 - randomize map feature
+- Add map borders for spectators
 
 Maybe
 - Innocent tasks?

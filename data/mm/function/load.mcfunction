@@ -73,6 +73,7 @@ execute unless score MurdererCountLength config matches -2147483648..2147483647 
 execute unless score TimerIndex config matches -2147483648..2147483647 run scoreboard players set TimerIndex config 0
 execute unless score MurdererCountIndex config matches -2147483648..2147483647 run scoreboard players set MurdererCountIndex config 0
 execute unless score MapSelectIndex config matches -2147483648..2147483647 run scoreboard players set MapSelectIndex config 0
+execute unless score MapWasRandom config matches -2147483648..2147483647 run scoreboard players set MapWasRandom config 0
 
 #Toggle shop items enables
 #Common

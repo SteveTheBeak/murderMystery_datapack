@@ -1,6 +1,9 @@
 #CANCEL GAME | PATH 1.4.2
 
 scoreboard players set GameActive config 0
+execute if score MapWasRandom config matches 1 run scoreboard players set MapSelectIndex config 7
+execute if score MapWasRandom config matches 1 run function mm:apply_map_select_value
+
 scoreboard players set Countdown timer -1
 scoreboard players set PvpTimer pvptimer -1
 team empty murderer
