@@ -91,15 +91,9 @@ Same but for item frames:
 execute as @e[type=item_frame,distance=..50] run data merge entity @s {Fixed:1b}
 
 
+Finished spectator limits:
 
-Gold dropping speeds for each map:
-Skeld: 8-15 seconds
-Airship: 6-12 seconds
-
-
-
-
-
-
-Adding future items in shop:
-data modify storage mm:shop items append value {tag:"mm_shop_bandage",slot:1,itemId:"minecraft:paper",giveFunction:"mm:shop/give_bandage"}
+- Skeld
+- Airship
+- Backrooms
+- Underwater base

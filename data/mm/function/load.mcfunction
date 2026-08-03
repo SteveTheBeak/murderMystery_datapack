@@ -15,6 +15,7 @@ scoreboard objectives add ShopCalc dummy
 scoreboard objectives add DisplaySegment dummy
 scoreboard objectives add ChosenItem dummy
 scoreboard objectives add HasShopItem dummy
+scoreboard objectives add HurtCheck dummy
 
 scoreboard objectives add Move minecraft.custom:minecraft.walk_one_cm
 scoreboard objectives add Sprint minecraft.custom:minecraft.sprint_one_cm
