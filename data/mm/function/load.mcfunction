@@ -25,6 +25,9 @@ scoreboard objectives add TotemUsed minecraft.used:minecraft.totem_of_undying
 
 scoreboard objectives add deaths deathCount
 
+scoreboard objectives add mm_disc_cd dummy
+scoreboard players set global mm_disc_cd 0
+
 scoreboard objectives add MeleeCooldown dummy
 scoreboard objectives add BowCooldown dummy
 scoreboard objectives add ActiveCooldownMax dummy

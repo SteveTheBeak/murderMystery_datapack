@@ -26,6 +26,13 @@ execute if score Countdown timer matches 0 run function mm:immediate_start
 
 execute if score PvpTimer pvptimer matches 0.. run function mm:death_manager/logic
 
+#For museum map shady alley
+execute as @a if score @s mm_disc_cd matches 1.. run scoreboard players remove @s mm_disc_cd 1
+execute as @a unless score @s mm_disc_cd matches -2147483648..2147483647 run scoreboard players set @s mm_disc_cd 0
+execute as @a if score @s mm_disc_cd matches ..0 if entity @s[x=-421,y=9,z=683,distance=..64] run stopsound @s record
+execute as @a if score @s mm_disc_cd matches ..0 if entity @s[x=-421,y=9,z=683,distance=..64] run playsound minecraft:music_disc.mellohi record @s -421 9 683 4 1
+execute as @a if score @s mm_disc_cd matches ..0 if entity @s[x=-421,y=9,z=683,distance=..64] run scoreboard players set @s mm_disc_cd 1920
+
 #Run function to clear totem display after used
 function mm:shop/clear_extralife_display
 
