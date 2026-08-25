@@ -24,3 +24,10 @@ execute if score MurdererCountIndex config matches 1.. unless entity @a[team=inn
 execute unless entity @a[team=innocent] unless entity @a[team=detective] run tellraw @a {"text":"The murderers killed everyone!","color":"red"}
 
 schedule function mm:end_game 60
+
+#Museum side quest reset
+#Replace glass panes in mammoth exhibit
+execute if score MapSelectIndex config matches 4 run fill -431 6 554 -436 10 554 minecraft:light_gray_stained_glass_pane
+
+#Remove oats
+kill @e[type=minecraft:item_frame,x=-398,y=3,z=403]

@@ -6,7 +6,7 @@
           "damage": {
             "type": {
               "direct_entity": {
-                "type": "minecraft:firework_rocket"
+                "minecraft:entity_type": "minecraft:firework_rocket"
               }
             }
           }

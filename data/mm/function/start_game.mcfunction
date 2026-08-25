@@ -6,7 +6,6 @@ scoreboard players set MapWasRandom config 0
 execute if score MapSelectIndex config matches 7 run scoreboard players set MapWasRandom config 1
 execute if score MapSelectIndex config matches 7 store result score MapSelectIndex config run random value 0..6
 execute if score MapWasRandom config matches 1 run function mm:apply_map_coords
-execute if score MapWasRandom config matches 1 run function mm:apply_map_select_value
 
 team empty murderer
 team empty detective

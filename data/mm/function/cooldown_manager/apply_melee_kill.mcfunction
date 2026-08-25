@@ -1,7 +1,7 @@
 tag @s add mm_attacker
-execute at @s as @a[distance=..3,tag=!mm_attacker] run execute store result score @s HurtCheck run data get entity @s HurtTime
-execute at @s as @a[distance=..3,tag=!mm_attacker,scores={HurtCheck=1..},sort=nearest,limit=1] run damage @s 1000 minecraft:generic
-execute at @s as @a[distance=..3,tag=!mm_attacker] run scoreboard players set @s HurtCheck 0
+execute at @s as @a[distance=..6,tag=!mm_attacker] run execute store result score @s HurtCheck run data get entity @s HurtTime
+execute at @s as @a[distance=..6,tag=!mm_attacker,scores={HurtCheck=1..},sort=nearest,limit=1] run damage @s 1000 minecraft:generic
+execute at @s as @a[distance=..6,tag=!mm_attacker] run scoreboard players set @s HurtCheck 0
 tag @s remove mm_attacker
 
 #Start this attacker's cooldown

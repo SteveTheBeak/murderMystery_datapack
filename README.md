@@ -82,6 +82,9 @@ Maybe
 
 Bugs:
 - End-game text is too large
+- when detective dies in airship off bridge or plank, bow is lost
+- When player with bow kills innocent, detective gets blindness
+
 
 
 Run the following command to lock every container:
@@ -95,5 +98,6 @@ Finished spectator limits:
 
 - Skeld
 - Airship
+- Museum
 - Backrooms
 - Underwater base

@@ -58,6 +58,10 @@ team modify murderer color red
 team modify detective color blue
 team modify innocent color green
 
+#team modify murderer color reset
+#team modify detective color reset
+#team modify innocent color reset
+
 team modify murderer friendlyFire false
 team modify detective friendlyFire false
 

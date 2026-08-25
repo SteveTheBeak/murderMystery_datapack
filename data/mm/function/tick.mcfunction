@@ -1,3 +1,6 @@
+#Give all players saturation
+effect give @a minecraft:saturation infinite 199 true
+
 #BUTTONS | PATH 1
 function mm:controls_tick
 
@@ -64,6 +67,10 @@ execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_darkness_real:1b}}}}] run tag @s add keep
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_murderer_deceive_real:1b}}}}] run tag @s add keep
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_shop_rocket_real:1b}}}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{id:"minecraft:trial_key"}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{id:"minecraft:ominous_trial_key"}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{id:"minecraft:rotten_flesh"}}] run tag @s add keep
+execute as @e[type=item,nbt={Item:{id:"minecraft:pumpkin_seeds"}}] run tag @s add keep
 
 #Regive purchased shop items that got hotkey-swapped with the murderer's sword or detective's bow/arrow
 function mm:shop/stop_swap
@@ -155,6 +162,9 @@ execute as @a if score @s shopOpen matches 1 if items entity @s player.cursor *[
 #Prevent purchased shop items from being dropped
 data modify storage mm:temp4 index set value 0
 function mm:shop/prevent_drop_real_loop with storage mm:temp4
+
+#Remove decoy if murderer dies
+execute as @e[tag=mm_decoy] if entity @n[gamemode=spectator,type=player] run kill @s  
 
 
 
