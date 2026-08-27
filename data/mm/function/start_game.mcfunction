@@ -2,6 +2,9 @@
 
 scoreboard players set GameActive config 1
 
+tag @a remove mm_dead
+scoreboard players set @a EnforceTimer 0
+
 scoreboard players set MapWasRandom config 0
 execute if score MapSelectIndex config matches 7 run scoreboard players set MapWasRandom config 1
 execute if score MapSelectIndex config matches 7 store result score MapSelectIndex config run random value 0..6

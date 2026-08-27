@@ -28,6 +28,9 @@ execute if score Countdown timer matches 20 at @a run playsound minecraft:block.
 execute if score Countdown timer matches 0 run function mm:immediate_start
 
 execute if score PvpTimer pvptimer matches 0.. run function mm:death_manager/logic
+execute as @a[tag=mm_dead] at @s if score PvpTimer pvptimer matches 0.. if score @s EnforceTimer matches 1.. run function mm:death_manager/enforce_position
+execute as @a[tag=mm_dead] if score @s EnforceTimer matches 1.. run scoreboard players remove @s EnforceTimer 1
+execute as @a[tag=mm_dead] if score @s EnforceTimer matches 0 run tag @s remove mm_dead
 
 #For museum map shady alley
 execute as @a if score @s mm_disc_cd matches 1.. run scoreboard players remove @s mm_disc_cd 1

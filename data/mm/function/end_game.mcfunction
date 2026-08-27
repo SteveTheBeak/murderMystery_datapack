@@ -19,3 +19,6 @@ kill @e[type=arrow]
 kill @e[type=item_frame]
 kill @e[type=item,tag=mm_gold]
 tag @e[tag=gold_active] remove gold_active
+
+tag @a remove mm_dead
+scoreboard players set @a EnforceTimer 0

@@ -6,6 +6,9 @@ execute as @a at @s run playsound minecraft:block.note_block.pling block @a ~ ~ 
 gamemode adventure @a
 scoreboard players operation @a lastDeaths = @a deaths
 
+tag @a remove mm_dead
+scoreboard players set @a EnforceTimer 0
+
 #Reset cooldown values
 scoreboard players set @a MeleeCooldown 0
 scoreboard players set @a BowCooldown 0

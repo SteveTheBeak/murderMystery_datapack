@@ -82,8 +82,6 @@ Maybe
 
 Bugs:
 - End-game text is too large
-- when detective dies in airship off bridge or plank, bow is lost
-- When player with bow kills innocent, detective gets blindness
 
 
 
@@ -92,12 +90,3 @@ Run the following command to lock every container:
 
 Same but for item frames:
 execute as @e[type=item_frame,distance=..50] run data merge entity @s {Fixed:1b}
-
-
-Finished spectator limits:
-
-- Skeld
-- Airship
-- Museum
-- Backrooms
-- Underwater base
