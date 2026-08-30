@@ -7,4 +7,5 @@ execute if score MapSelectIndex config matches 3 as @e[type=text_display,tag=map
 execute if score MapSelectIndex config matches 4 as @e[type=text_display,tag=map_select_display,limit=1] run data merge entity @s {text:{text:"Map: Museum",color:"yellow",bold:false}}
 execute if score MapSelectIndex config matches 5 as @e[type=text_display,tag=map_select_display,limit=1] run data merge entity @s {text:{text:"Map: Backrooms",color:"yellow",bold:false}}
 execute if score MapSelectIndex config matches 6 as @e[type=text_display,tag=map_select_display,limit=1] run data merge entity @s {text:{text:"Map: Underwater Base",color:"yellow",bold:false}}
-execute if score MapSelectIndex config matches 7 as @e[type=text_display,tag=map_select_display,limit=1] run data merge entity @s {text:{text:"Map: Random",color:"yellow",bold:false}}
+execute if score MapSelectIndex config matches 7 as @e[type=text_display,tag=map_select_display,limit=1] run data merge entity @s {text:{text:"Map: Moon",color:"yellow",bold:false}}
+execute if score MapSelectIndex config matches 8 as @e[type=text_display,tag=map_select_display,limit=1] run data merge entity @s {text:{text:"Map: Random",color:"yellow",bold:false}}

@@ -8,13 +8,9 @@ tellraw @s {"text":"You died! Spectating until the round ends.","color":"red","i
 scoreboard players set @s deaths 0
 
 
-execute store result storage mm:temp x double 1 run data get entity @s Pos[0]
-
-execute store result score @s TempCalc run data get entity @s Pos[1] 100
-scoreboard players add @s TempCalc 100
-execute store result storage mm:temp y double 0.01 run scoreboard players get @s TempCalc
-
-execute store result storage mm:temp z double 1 run data get entity @s Pos[2]
+execute store result storage mm:temp x int 1 run scoreboard players get @s LiveX
+execute store result storage mm:temp y int 1 run scoreboard players get @s LiveY
+execute store result storage mm:temp z int 1 run scoreboard players get @s LiveZ
 
 execute store result score @s DeathX run data get storage mm:temp x
 execute store result score @s DeathY run data get storage mm:temp y

@@ -36,3 +36,7 @@ execute if score @s temp < MapMinHeight config if score MapSelectIndex config ma
 #If map is underwater base
 execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 6 if score @s retries matches 6.. run tp @s -348 -57 157
 execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 6 if score @s retries matches 6.. run scoreboard players set @s retries 0
+
+#If map is moon
+execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 7 if score @s retries matches 6.. run tp @s 1223 214 184
+execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 7 if score @s retries matches 6.. run scoreboard players set @s retries 0

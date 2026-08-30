@@ -170,6 +170,11 @@ function mm:shop/prevent_drop_real_loop with storage mm:temp4
 execute as @e[tag=mm_decoy] if entity @n[gamemode=spectator,type=player] run kill @s  
 
 
+#Store position of each active player during game
+execute as @a[tag=!mm_dead] if score PvpTimer pvptimer matches 1.. store result score @s LiveX run data get entity @s Pos[0]
+execute as @a[tag=!mm_dead] if score PvpTimer pvptimer matches 1.. store result score @s LiveY run data get entity @s Pos[1]
+execute as @a[tag=!mm_dead] if score PvpTimer pvptimer matches 1.. store result score @s LiveZ run data get entity @s Pos[2]
+
 
 #SHOP
 #Keep the shop icon pinned in place, immune to both duplication and relocation
@@ -207,3 +212,18 @@ execute if score PvpTimer pvptimer matches 0 run clear @a
 
 #KILL COOLDOWN MANAGER | PATH 5
 function mm:cooldown_manager/logic
+
+
+#Spectator limits for moon map
+#West wall
+execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=1077,y=200,z=-71,dx=3,dy=70,dz=412] run tp @s 1223 214 184 90 0
+#North wall
+execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=1412,y=200,z=-71,dx=-335,dy=70,dz=-3] run tp @s 1223 214 184 90 0
+#South wall
+execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=1077,y=200,z=341,dx=335,dy=70,dz=3] run tp @s 1223 214 184 90 0
+#East wall
+execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=1412,y=200,z=341,dx=-3,dy=70,dz=-412] run tp @s 1223 214 184 90 0
+#Bottom
+execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=1077,y=199,z=341,dx=335,dy=3,dz=-412] run tp @s 1223 214 184 90 0
+#Top
+execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=1077,y=270,z=341,dx=335,dy=-3,dz=-412] run tp @s 1223 214 184 90 0

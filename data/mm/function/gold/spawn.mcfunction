@@ -5,3 +5,4 @@ execute if score MapSelectIndex config matches 3 as @e[tag=cruise_gold,tag=!gold
 execute if score MapSelectIndex config matches 4 as @e[tag=museum_gold,tag=!gold_active,sort=random,limit=1] at @s run function mm:gold/spawn_at_stand
 execute if score MapSelectIndex config matches 5 as @e[tag=backrooms_gold,tag=!gold_active,sort=random,limit=1] at @s run function mm:gold/spawn_at_stand
 execute if score MapSelectIndex config matches 6 as @e[tag=underwater_gold,tag=!gold_active,sort=random,limit=1] at @s run function mm:gold/spawn_at_stand
+execute if score MapSelectIndex config matches 7 as @e[tag=moon_gold,tag=!gold_active,sort=random,limit=1] at @s run function mm:gold/spawn_at_stand

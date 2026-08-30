@@ -73,7 +73,6 @@ Debug:
 
 
 To do:
-- Add map borders for spectators
 
 Maybe
 - Innocent tasks?
@@ -81,7 +80,6 @@ Maybe
 - Innocent Tester?
 
 Bugs:
-- End-game text is too large
 
 
 

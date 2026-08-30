@@ -30,6 +30,10 @@ scoreboard objectives add DeathY dummy
 scoreboard objectives add DeathZ dummy
 scoreboard objectives add EnforceTimer dummy
 
+scoreboard objectives add LiveX dummy
+scoreboard objectives add LiveY dummy
+scoreboard objectives add LiveZ dummy
+
 scoreboard objectives add mm_disc_cd dummy
 scoreboard players set global mm_disc_cd 0
 
@@ -59,13 +63,13 @@ team add murderer Murderer
 team add detective Detective
 team add innocent Innocent
 
-team modify murderer color red
-team modify detective color blue
-team modify innocent color green
+#team modify murderer color red
+#team modify detective color blue
+#team modify innocent color green
 
-#team modify murderer color reset
-#team modify detective color reset
-#team modify innocent color reset
+team modify murderer color reset
+team modify detective color reset
+team modify innocent color reset
 
 team modify murderer friendlyFire false
 team modify detective friendlyFire false

@@ -19,6 +19,10 @@ execute store result storage mm:temp radius int 1 run scoreboard players get Map
 execute store result storage mm:temp maxheight int 1 run scoreboard players get MapMaxHeight config
 execute run data modify storage mm:temp target set value "@a"
 
+#Add effects for moon
+execute as @a if score MapSelectIndex config matches 7 run attribute @s minecraft:gravity base set 0.04
+execute as @a if score MapSelectIndex config matches 7 run attribute @s minecraft:air_drag_modifier base set 1.3
+
 #SPREAD PLAYERS | PATH 3.1
 execute run function mm:spread_players with storage mm:temp
 

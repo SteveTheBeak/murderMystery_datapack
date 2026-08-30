@@ -16,6 +16,9 @@ execute if score MapSelectIndex config matches 4 if score GoldTimer gold matches
 execute if score MapSelectIndex config matches 5 if score GoldTimer gold matches 0 store result score GoldTimer gold run random value 5..20
 #Underwater Base - Drop gold every 4-6 seconds
 execute if score MapSelectIndex config matches 6 if score GoldTimer gold matches 0 store result score GoldTimer gold run random value 80..120
+#Moon - Drop gold every 1-3 seconds
+execute if score MapSelectIndex config matches 7 if score GoldTimer gold matches 0 store result score GoldTimer gold run random value 20..60
+
 
 #Release the armor stand once its gold has been collected, so it's eligible again
 execute unless entity @e[tag=mm_gold] run tag @e[tag=gold_active] remove gold_active
