@@ -11,8 +11,18 @@ execute if score MapSelectIndex config matches 8 store result score MapSelectInd
 execute if score MapWasRandom config matches 1 run function mm:apply_map_coords
 
 #Change time of day depending on map
-execute if score MapSelectIndex config matches ..6 run time set minecraft:noon
+execute if score MapSelectIndex config matches 0 run time set minecraft:noon
+execute if score MapSelectIndex config matches 1 run time set minecraft:noon
+execute if score MapSelectIndex config matches 2 run time set minecraft:noon
+execute if score MapSelectIndex config matches 3 run time set minecraft:noon
+execute if score MapSelectIndex config matches 4 run time set minecraft:noon
+execute if score MapSelectIndex config matches 5 run time set minecraft:midnight
+execute if score MapSelectIndex config matches 6 run time set minecraft:noon
 execute if score MapSelectIndex config matches 7 run time set minecraft:midnight
+
+#Reset pool table if map is airship
+execute run summon minecraft:ender_pearl 221 0 11 {NoGravity:1b}
+execute run setblock 220 -37 12 repeater[facing=west]
 
 team empty murderer
 team empty detective

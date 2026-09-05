@@ -1,0 +1,1 @@
+$kill @e[tag=mm_decoy,nbt={OwnerUUID:$(UUID)}]

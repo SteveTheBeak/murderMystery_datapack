@@ -38,11 +38,17 @@ scoreboard players set @a retries 0
 #IN GAME PROCEDURES | PATH 3.3
 execute run function mm:in_game
 
+#Tell murderers who the murderers (their teammates) are
+execute run tellraw @a[team=murderer] [{"text":"Murderers: ","color":"red"},{"selector":"@a[tag=mm_was_murderer]","color":"red"}]
+
+#Display extra info text
+#execute run tellraw @a [{"text":"Game Info","color":"green","hover_event":{"action":"show_text","value":""}}]
+
 #Reset museum side quest
 execute if score MapSelectIndex config matches 4 run fill -431 6 554 -436 10 554 minecraft:light_gray_stained_glass_pane
 
-#If map is museum, place side quest key
-execute if score MapSelectIndex config matches 4 run summon minecraft:item_frame -434 7 559 {Item:{id:"minecraft:ominous_trial_key",Count:1b,components:{"minecraft:custom_name":{text:"The Granny Resurfacer 3000",color:"gold",italic:false}}},Facing:3b,Invisible:1b}
-
 #Remove oats
 kill @e[type=minecraft:item_frame,x=-398,y=3,z=403]
+
+#Remove ender pearl in airship
+kill @e[type=ender_pearl]

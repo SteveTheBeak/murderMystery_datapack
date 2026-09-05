@@ -4,7 +4,10 @@ advancement revoke @s only mm:shop/deceive_detect
 clear @s minecraft:player_head[minecraft:custom_data={mm_shop_murderer_deceive_real:1b}]
 
 #Pick a random non-murderer player's skin for the decoy
-execute as @a[team=!murderer,sort=random,limit=1] run data modify storage mm:temp2 uuid set from entity @s UUID
+execute as @a[team=!murderer,gamemode=adventure,sort=random,limit=1] run data modify storage mm:temp2 uuid set from entity @s UUID
+
+#Store the murderer's own UUID too, so the decoy can be tied to its owner
+data modify storage mm:temp2 owner set from entity @s UUID
 
 #Spawn the decoy directly on top of the murderer
 execute at @s run function mm:shop/spawn_decoy with storage mm:temp2

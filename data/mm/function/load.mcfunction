@@ -46,6 +46,7 @@ scoreboard objectives add TempCalc dummy
 scoreboard objectives add SwordAway dummy
 scoreboard objectives add FreezeTimer dummy
 scoreboard objectives add DecoyTimer dummy
+scoreboard objectives add slots_pool dummy
 
 
 data modify storage mm:shop items set value [{tag:"mm_shop_gold",slot:0,rawSlot:9,itemId:"minecraft:gold_ingot",giveFunction:"mm:shop/shop_menu"},{tag:"mm_shop_item",slot:11,rawSlot:20,itemId:"minecraft:potion",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:12,rawSlot:21,itemId:"minecraft:potion",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:14,rawSlot:23,itemId:"minecraft:bow",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:15,rawSlot:24,itemId:"minecraft:totem_of_undying",giveFunction:"mm:shop/give_shop_items"}]
@@ -113,6 +114,8 @@ execute unless score GameActive config matches -2147483648..2147483647 run score
 execute unless score DebugMode config matches -2147483648..2147483647 run scoreboard players set DebugMode config 1
 
 execute unless score HeightCheckCount config matches -2147483648..2147483647 run scoreboard players set HeightCheckCount config 0
+
+execute unless score #global slots_pool matches -2147483648..2147483647 run scoreboard players set #global slots_pool 0
 
 function mm:apply_map_coords
 

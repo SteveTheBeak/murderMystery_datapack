@@ -1,6 +1,5 @@
 #GAME END SEQUENCE | PATH 4
 
-effect clear @a
 execute run tellraw @a {"text":"Game over!","color":"gray","italic":true}
 execute run scoreboard players set PvpTimer pvptimer -1
 

@@ -1,1 +1,1 @@
-$summon minecraft:mannequin $(x) $(y) $(z) {Tags:["dead_body","falling_body"],profile:{id:$(uuid)},pose:"sleeping",Rotation:[$(yaw)f,0f],Invulnerable:1b,hide_description:true}
+$execute positioned $(x) $(y) $(z) run summon minecraft:mannequin ~ ~0.5 ~ {Tags:["dead_body","falling_body"],profile:{id:$(uuid)},pose:"sleeping",Rotation:[$(yaw)f,0f],Invulnerable:1b,hide_description:true}

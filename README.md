@@ -73,6 +73,8 @@ Debug:
 
 
 To do:
+-Murderers see each other
+-Detective knows when they kill murderer
 
 Maybe
 - Innocent tasks?
@@ -88,3 +90,29 @@ Run the following command to lock every container:
 
 Same but for item frames:
 execute as @e[type=item_frame,distance=..50] run data merge entity @s {Fixed:1b}
+
+Lock armour stands:
+/data merge entity @e[type=armor_stand,limit=1,sort=nearest] {DisabledSlots:4144959}
+
+
+Top priority:
+Compass for murderer, either appears in inventory last 3-5 min or a buyable item that becomes free
+
+Map filter
+
+Replace speed for innocent shop:
+Footprint tracking mechanic as a item for innocent?
+
+New Role?:
+Jester: One jester, wins if detective kills them, to balance, jester gets no items
+
+Mutant: One mutant, part of innocent team, buyable enhanced hearing item that picks up on murderer heart beats, buyable enhanced smell item that makes a pointer to every player in the game, to balance mutant is completely defenceless
+
+Medic: One medic, part of innocent team, buyable revive item, 15 gold?
+
+Spectator quality of life:
+Spiritual guidance mechanic? If spectating murderer, murderer gets a glimpse of the closest innocent, etc
+
+Small reminders:
+Update lobby guide book
+Add descriptions under role titles when game starts

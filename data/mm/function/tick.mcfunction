@@ -24,6 +24,10 @@ execute if score Countdown timer matches 40 at @a run playsound minecraft:block.
 execute if score Countdown timer matches 20 run title @a title {"text":"1","color":"yellow","bold":true}
 execute if score Countdown timer matches 20 at @a run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
 
+#Reset pool table in airship by killing sulfur cubes
+execute if score MapSelectIndex config matches 1 if score Countdown timer matches 80 run kill @e[x=63,y=-20,z=88,dx=181,dy=-50,dz=-92,type=sulfur_cube]
+execute if score MapSelectIndex config matches 1 if score Countdown timer matches 20 run kill @e[x=63,y=-20,z=88,dx=181,dy=-50,dz=-92,type=sulfur_cube]
+
 #IMMEDIATE START | PATH 3
 execute if score Countdown timer matches 0 run function mm:immediate_start
 
@@ -166,8 +170,8 @@ execute as @a if score @s shopOpen matches 1 if items entity @s player.cursor *[
 data modify storage mm:temp4 index set value 0
 function mm:shop/prevent_drop_real_loop with storage mm:temp4
 
-#Remove decoy if murderer dies
-execute as @e[tag=mm_decoy] if entity @n[gamemode=spectator,type=player] run kill @s  
+#Remove decoy if its owning murderer has died
+execute as @a[gamemode=spectator] at @s run function mm:shop/kill_owned_decoy with entity @s
 
 
 #Store position of each active player during game
