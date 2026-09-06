@@ -48,7 +48,7 @@ execute run tellraw @a[team=murderer] [{"text":"Murderers: ","color":"red"},{"se
 execute if score MapSelectIndex config matches 4 run fill -431 6 554 -436 10 554 minecraft:light_gray_stained_glass_pane
 
 #Remove oats
-kill @e[type=minecraft:item_frame,x=-398,y=3,z=403]
+kill @e[type=minecraft:item_frame,x=-398,y=3,z=403,dx=0,dy=0,dz=0]
 
-#Remove ender pearl in airship
-kill @e[type=ender_pearl]
+#Sto ploading pool table chunk
+forceload remove 241 -1 202 27

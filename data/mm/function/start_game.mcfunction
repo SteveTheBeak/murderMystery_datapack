@@ -21,7 +21,7 @@ execute if score MapSelectIndex config matches 6 run time set minecraft:noon
 execute if score MapSelectIndex config matches 7 run time set minecraft:midnight
 
 #Reset pool table if map is airship
-execute run summon minecraft:ender_pearl 221 0 11 {NoGravity:1b}
+forceload add 241 -1 202 27
 execute run setblock 220 -37 12 repeater[facing=west]
 
 team empty murderer
