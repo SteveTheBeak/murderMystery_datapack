@@ -3,9 +3,9 @@ execute as @e[tag=thrown_sword,type=item_display] at @s run tp @s ^ ^ ^0.8
 execute as @e[tag=thrown_sword_hitbox,type=interaction] at @s run tp @s ^ ^ ^0.8
 
 #If hit a block, remove sword and hitbox and give new sword
-execute as @e[tag=thrown_sword_hitbox,type=interaction] if score @s flight_time matches 5.. at @s unless block ~ ~ ~ #minecraft:replaceable run execute as @a[team=murderer] run scoreboard players set @s SwordAway 0
-execute as @e[tag=thrown_sword_hitbox,type=interaction] if score @s flight_time matches 5.. at @s unless block ~ ~ ~ #minecraft:replaceable run kill @e[tag=thrown_sword,limit=1,sort=nearest]
-execute as @e[tag=thrown_sword_hitbox,type=interaction] if score @s flight_time matches 5.. at @s unless block ~ ~ ~ #minecraft:replaceable run kill @s
+execute as @e[tag=thrown_sword_hitbox,type=interaction] if score @s flight_time matches 1.. at @s unless block ~ ~ ~ #minecraft:replaceable run execute as @a[team=murderer] run scoreboard players set @s SwordAway 0
+execute as @e[tag=thrown_sword_hitbox,type=interaction] if score @s flight_time matches 1.. at @s unless block ~ ~ ~ #minecraft:replaceable run kill @e[tag=thrown_sword,limit=1,sort=nearest]
+execute as @e[tag=thrown_sword_hitbox,type=interaction] if score @s flight_time matches 1.. at @s unless block ~ ~ ~ #minecraft:replaceable run kill @s
 
 #Advance the spin (visual only)
 execute as @e[tag=thrown_sword,type=item_display] run scoreboard players add @s spinstep 1

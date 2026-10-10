@@ -5,7 +5,7 @@ effect clear @a
 
 tag @a remove mm_was_murderer
 scoreboard players set GameActive config 0
-execute if score MapWasRandom config matches 1 run scoreboard players set MapSelectIndex config 8
+execute if score MapWasRandom config matches 1 run scoreboard players set MapSelectIndex config 9
 execute if score MapWasRandom config matches 1 run function mm:apply_map_select_value
 
 #Remove effects for moon
@@ -23,7 +23,7 @@ kill @e[type=minecraft:item_frame,x=-398,y=3,z=403,dx=0,dy=0,dz=0]
 kill @e[type=minecraft:item]
 
 #If map was chosen randomly, set map select index back to the random value
-execute if score MapWasRandom config matches 1 run scoreboard players set MapSelectIndex config 8
+execute if score MapWasRandom config matches 1 run scoreboard players set MapSelectIndex config 9
 
 team empty murderer
 team empty detective

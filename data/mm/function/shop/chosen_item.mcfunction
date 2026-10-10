@@ -26,7 +26,7 @@ execute if score @s ChosenItem matches 1 if score @s HasShopItem matches 0 if sc
 #swiftness
 execute if score @s ChosenItem matches 2 if score @s HasShopItem matches 0 if score @s gold matches ..4 run tellraw @s {"text":"Not enough gold!","color":"red"}
 execute if score @s ChosenItem matches 2 if score @s HasShopItem matches 0 if score @s gold matches ..4 at @s run playsound minecraft:entity.villager.no block @a ~ ~ ~ 1 1.2
-execute if score @s ChosenItem matches 2 if score @s HasShopItem matches 0 if score @s gold matches 5.. run item replace entity @s hotbar.4 with minecraft:potion[minecraft:custom_data={mm_shop_speed_real:1b},minecraft:potion_contents={custom_effects:[{id:"minecraft:speed",amplifier:1,duration:160,ambient:false,show_particles:false,show_icon:true}]},minecraft:custom_name={"text":"Speed","color":"aqua","italic":false},!minecraft:use_remainder]
+execute if score @s ChosenItem matches 2 if score @s HasShopItem matches 0 if score @s gold matches 5.. run item replace entity @s hotbar.4 with minecraft:potion[minecraft:custom_data={mm_shop_speed_real:1b},minecraft:potion_contents={custom_effects:[{id:"minecraft:speed",amplifier:2,duration:160,ambient:false,show_particles:false,show_icon:true}]},minecraft:consumable={consume_seconds:0.1,animation:"drink",sound:"entity.generic.drink"},minecraft:custom_name={"text":"Speed","color":"aqua","italic":false},!minecraft:use_remainder]
 execute if score @s ChosenItem matches 2 if score @s HasShopItem matches 0 if score @s gold matches 5.. run scoreboard players remove @s gold 5
 #bow
 execute if score @s ChosenItem matches 3 if score @s HasShopItem matches 0 if score @s gold matches ..9 run tellraw @s {"text":"Not enough gold!","color":"red"}

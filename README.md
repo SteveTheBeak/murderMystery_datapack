@@ -101,7 +101,7 @@ Compass for murderer, either appears in inventory last 3-5 min or a buyable item
 Map filter
 
 Replace speed for innocent shop:
-Footprint tracking mechanic as a item for innocent?
+Footprint tracking mechanic as an item for innocent?
 
 New Role?:
 Jester: One jester, wins if detective kills them, to balance, jester gets no items
@@ -113,6 +113,71 @@ Medic: One medic, part of innocent team, buyable revive item, 15 gold?
 Spectator quality of life:
 Spiritual guidance mechanic? If spectating murderer, murderer gets a glimpse of the closest innocent, etc
 
+New idea: Voting in lobby for "Game master", who has sole control over settings and start button. Player who gets majority votes becomes game master, and if majority vote to change the game master, the role is removed from them
+
 Small reminders:
 Update lobby guide book
 Add descriptions under role titles when game starts
+
+
+************NEW MAP ADDITIONS************
+
+1. apply_map_select_value.mcfunction
+
+ Add a line for the new map:
+  execute if score MapSelectIndex config matches N as @e[type=text_display,tag=map_select_display,limit=1] run data merge entity @s {text:{text:"Map: <Name>",color:"yellow",bold:false}}
+ Change the Random line from matches 8 to matches R.
+
+2. apply_map_coords.mcfunction
+
+ Add a 5-line block:
+  execute if score MapSelectIndex config matches N run scoreboard players set MapCenterX config <x>
+  execute if score MapSelectIndex config matches N run scoreboard players set MapCenterZ config <z>
+  execute if score MapSelectIndex config matches N run scoreboard players set MapRadius config <r>
+  execute if score MapSelectIndex config matches N run scoreboard players set MapMaxHeight config <y>
+  execute if score MapSelectIndex config matches N run scoreboard players set MapMinHeight config <y>
+MapMaxHeight feeds spreadplayers ... under. MapMinHeight is the “player fell out of the map” threshold in check_player_height.
+
+3. cycle_map_select.mcfunction
+
+ Line 7: change matches 9.. to matches R+1.. (so 10..).
+
+4. cycle_map_select_back.mcfunction
+
+ Line 7: change set MapSelectIndex config 8 to R.
+
+5. start_game.mcfunction
+
+ Line 9: matches 8 → matches R.
+ Line 10: matches 8 → matches R, and random value 0..7 → 0..N.
+ Add a time-of-day line after line 21:
+  execute if score MapSelectIndex config matches N run time set minecraft:noon
+
+(use midnight for dark maps like Backrooms and Moon)
+
+6. end_game.mcfunction
+
+ Line 8: set MapSelectIndex config 8 → R.
+ Line 26: same change. The Random reset appears twice in this file.
+
+7. cancel_game.mcfunction
+
+ Line 4: set MapSelectIndex config 8 → R.
+
+8. check_player_height.mcfunction
+
+ Add the fallback pair, using a known-safe standing spot (the 6th-retry teleport):
+  #If map is <name>
+  execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches N if score @s retries matches 6.. run tp @s <x> <y> <z>
+  execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches N if score @s retries matches 6.. run scoreboard players set @s retries 0
+
+9. gold/spawn.mcfunction
+
+ Add:
+  execute if score MapSelectIndex config matches N as @e[tag=<name>_gold,tag=!gold_active,sort=random,limit=1] at @s run function mm:gold/spawn_at_stand
+
+10. gold/gold_tick.mcfunction
+
+ Add a drop-rate line (in ticks, 20 = 1s), with a comment like the others:
+  #<Name> - Drop gold every X-Y seconds
+  execute if score MapSelectIndex config matches N if score GoldTimer gold matches 0 store result score GoldTimer gold run random value <min>..<max>

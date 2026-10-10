@@ -40,3 +40,7 @@ execute if score @s temp < MapMinHeight config if score MapSelectIndex config ma
 #If map is moon
 execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 7 if score @s retries matches 6.. run tp @s 1223 214 184
 execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 7 if score @s retries matches 6.. run scoreboard players set @s retries 0
+
+#If map is cathedral
+execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 8 if score @s retries matches 6.. run tp @s -1024 -5 -164
+execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches 8 if score @s retries matches 6.. run scoreboard players set @s retries 0
