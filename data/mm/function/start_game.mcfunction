@@ -7,7 +7,7 @@ scoreboard players set @a EnforceTimer 0
 
 scoreboard players set MapWasRandom config 0
 execute if score MapSelectIndex config matches 9 run scoreboard players set MapWasRandom config 1
-execute if score MapSelectIndex config matches 9 store result score MapSelectIndex config run random value 0..8
+execute if score MapSelectIndex config matches 9 run function mm:pick_random_map
 execute if score MapWasRandom config matches 1 run function mm:apply_map_coords
 
 #Change time of day depending on map

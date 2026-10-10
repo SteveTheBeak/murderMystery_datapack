@@ -16,6 +16,7 @@ scoreboard objectives add DisplaySegment dummy
 scoreboard objectives add ChosenItem dummy
 scoreboard objectives add HasShopItem dummy
 scoreboard objectives add HurtCheck dummy
+scoreboard objectives add mapFilter dummy
 
 scoreboard objectives add Move minecraft.custom:minecraft.walk_one_cm
 scoreboard objectives add Sprint minecraft.custom:minecraft.sprint_one_cm
@@ -91,6 +92,8 @@ execute unless score MurdererCountLength config matches -2147483648..2147483647 
 execute unless score TimerIndex config matches -2147483648..2147483647 run scoreboard players set TimerIndex config 0
 execute unless score MurdererCountIndex config matches -2147483648..2147483647 run scoreboard players set MurdererCountIndex config 0
 execute unless score MapSelectIndex config matches -2147483648..2147483647 run scoreboard players set MapSelectIndex config 0
+execute unless score MapFilterIndex config matches -2147483648..2147483647 run scoreboard players set MapFilterIndex config 0
+execute unless score MapsOff config matches -2147483648..2147483647 run scoreboard players set MapsOff config 0
 execute unless score MapWasRandom config matches -2147483648..2147483647 run scoreboard players set MapWasRandom config 0
 
 #Toggle shop items enables
@@ -118,5 +121,6 @@ execute unless score HeightCheckCount config matches -2147483648..2147483647 run
 execute unless score #global slots_pool matches -2147483648..2147483647 run scoreboard players set #global slots_pool 0
 
 function mm:apply_map_coords
+function mm:apply_map_filter
 
 say Murder Mystery datapack initialized

@@ -16,6 +16,9 @@ Spawn start button:
 /summon minecraft:interaction ~ ~1.0 ~-0.2 {Tags:["start_button"],width:1.0,height:1.0}
 /summon minecraft:text_display ~ ~1.5 ~-0.2 {Tags:["start_button_display"],text:{text:"START GAME",color:"green",bold:true},billboard:"fixed"}
 
+Spawn map filter button:
+/summon minecraft:interaction ~ ~1.0 ~-0.2 {Tags:["filter_map"],width:1.0,height:1.0}
+/summon minecraft:text_display ~ ~1.5 ~-0.2 {Tags:["filter_map_display"],text:'{"text":"Toggle map: "}',billboard:"fixed"}
 
 
 
