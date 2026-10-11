@@ -189,12 +189,6 @@ execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matche
 execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 1 unless entity @s[nbt={Inventory:[{Slot:17b,components:{"minecraft:custom_data":{mm_shop:1b}}}]}] run clear @s minecraft:emerald[minecraft:custom_data={mm_shop:1b}]
 execute as @a if score PvpTimer pvptimer matches 0.. if score @s TempCalc matches 1 unless entity @s[nbt={Inventory:[{Slot:17b,components:{"minecraft:custom_data":{mm_shop:1b}}}]}] run function mm:shop/give_shop_icon
 
-#Make players glow at 2 minutes
-execute if score PvpTimer pvptimer matches 2400 run title @a title {"text":""}
-execute if score PvpTimer pvptimer matches 2400 run title @a subtitle {"text":"Players are now glowing!","color":"aqua","bold":false}
-execute if score PvpTimer pvptimer matches 2400 run effect give @e[team=innocent] glowing infinite 1
-execute if score PvpTimer pvptimer matches 2400 run effect give @e[team=detective] glowing infinite 1
-
 #5 MINUTE WARNING
 execute if score PvpTimer pvptimer matches 6001 run title @a title {"text":"5 minutes remaining","color":"red","bold":false}
 #1 MINUTE WARNING
@@ -217,6 +211,8 @@ execute if score PvpTimer pvptimer matches 0 run clear @a
 #KILL COOLDOWN MANAGER | PATH 5
 function mm:cooldown_manager/logic
 
+#MURDERER TRACKING COMPASS | last 3 minutes only
+execute if score PvpTimer pvptimer matches 1..3600 run function mm:compass/tick
 
 #Spectator limits for moon map
 #West wall
