@@ -64,14 +64,17 @@ scoreboard players set Const1200 const 1200
 team add murderer Murderer
 team add detective Detective
 team add innocent Innocent
+team add jester Jester
 
 #team modify murderer color red
 #team modify detective color blue
 #team modify innocent color green
+#team modify jester color light_purple
 
 team modify murderer color reset
 team modify detective color reset
 team modify innocent color reset
+team modify jester color reset
 
 team modify murderer friendlyFire false
 team modify detective friendlyFire false
@@ -79,6 +82,7 @@ team modify detective friendlyFire false
 team modify murderer nametagVisibility never
 team modify detective nametagVisibility never
 team modify innocent nametagVisibility never
+team modify jester nametagVisibility never
 
 
 #PLAYER ATTRIBUTES

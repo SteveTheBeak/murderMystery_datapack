@@ -15,6 +15,8 @@ scoreboard players set GoldTimer gold 0
 scoreboard players set @a FreezeTimer -1
 scoreboard players set @a DecoyTimer -1
 tag @a remove mm_was_murderer
+tag @a remove mm_was_jester
+tag @a remove mm_jester_shot
 tag @e[tag=gold_active] remove gold_active
 
 #TEST IF GAME CAN START | PATH 1.4.1

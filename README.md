@@ -125,62 +125,82 @@ Add descriptions under role titles when game starts
 
 ************NEW MAP ADDITIONS************
 
-1. apply_map_select_value.mcfunction
+apply_map_select_value.mcfunction
 
- Add a line for the new map:
+ Add the new map’s line:
   execute if score MapSelectIndex config matches N as @e[type=text_display,tag=map_select_display,limit=1] run data merge entity @s {text:{text:"Map: <Name>",color:"yellow",bold:false}}
- Change the Random line from matches 8 to matches R.
+ Change the Random line from matches 9 to matches R.
 
-2. apply_map_coords.mcfunction
+apply_map_coords.mcfunction
 
- Add a 5-line block:
-  execute if score MapSelectIndex config matches N run scoreboard players set MapCenterX config <x>
-  execute if score MapSelectIndex config matches N run scoreboard players set MapCenterZ config <z>
-  execute if score MapSelectIndex config matches N run scoreboard players set MapRadius config <r>
-  execute if score MapSelectIndex config matches N run scoreboard players set MapMaxHeight config <y>
-  execute if score MapSelectIndex config matches N run scoreboard players set MapMinHeight config <y>
-MapMaxHeight feeds spreadplayers ... under. MapMinHeight is the “player fell out of the map” threshold in check_player_height.
+ Add 5 lines: MapCenterX, MapCenterZ, MapRadius, MapMaxHeight, MapMinHeight, each execute if score MapSelectIndex config matches N run scoreboard players set <name> config <value>.
 
-3. cycle_map_select.mcfunction
+cycle_map_select.mcfunction
 
- Line 7: change matches 9.. to matches R+1.. (so 10..).
+ Wrap: matches 10.. → matches R+1...
 
-4. cycle_map_select_back.mcfunction
+cycle_map_select_back.mcfunction
 
- Line 7: change set MapSelectIndex config 8 to R.
+ Wrap: set MapSelectIndex config 9 → R.
 
-5. start_game.mcfunction
+start_game.mcfunction
 
- Line 9: matches 8 → matches R.
- Line 10: matches 8 → matches R, and random value 0..7 → 0..N.
- Add a time-of-day line after line 21:
-  execute if score MapSelectIndex config matches N run time set minecraft:noon
+ Line 9 (MapWasRandom): change matches 9 to matches R.
+ Line 10 (function mm:pick_random_map): change matches 9 to matches R.
+ Add a time-of-day line (noon or midnight): execute if score MapSelectIndex config matches N run time set minecraft:noon
 
-(use midnight for dark maps like Backrooms and Moon)
+end_game.mcfunction
 
-6. end_game.mcfunction
+ Two lines set the Random index (around lines 8 and 26): change both from 9 to R.
 
- Line 8: set MapSelectIndex config 8 → R.
- Line 26: same change. The Random reset appears twice in this file.
+cancel_game.mcfunction
 
-7. cancel_game.mcfunction
+ One line sets Random: change from 9 to R.
 
- Line 4: set MapSelectIndex config 8 → R.
+check_player_height.mcfunction
 
-8. check_player_height.mcfunction
-
- Add the fallback pair, using a known-safe standing spot (the 6th-retry teleport):
+ Add the fallback pair with a safe tp spot:
   #If map is <name>
   execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches N if score @s retries matches 6.. run tp @s <x> <y> <z>
   execute if score @s temp < MapMinHeight config if score MapSelectIndex config matches N if score @s retries matches 6.. run scoreboard players set @s retries 0
 
-9. gold/spawn.mcfunction
+gold/spawn.mcfunction
 
  Add:
   execute if score MapSelectIndex config matches N as @e[tag=<name>_gold,tag=!gold_active,sort=random,limit=1] at @s run function mm:gold/spawn_at_stand
 
-10. gold/gold_tick.mcfunction
+gold/gold_tick.mcfunction
 
- Add a drop-rate line (in ticks, 20 = 1s), with a comment like the others:
+ Add the drop-rate line:
   #<Name> - Drop gold every X-Y seconds
   execute if score MapSelectIndex config matches N if score GoldTimer gold matches 0 store result score GoldTimer gold run random value <min>..<max>
+
+(ticks, 20 = 1s)
+
+Map filter files (new)
+
+pick_random_map.mcfunction
+
+ random value 0..8 → 0..N.
+
+read_map_filter.mcfunction
+
+ Add:
+  execute if score MapProbe config matches N store success score MapFilterOff config if score <Name> mapFilter matches 1
+
+The fake player name (<Name>) must be the same one you use in the toggle file below.
+
+apply_map_filter.mcfunction
+
+ Add the text line:
+  execute if score MapFilterIndex config matches N as @e[type=text_display,tag=filter_map_display,limit=1] run data merge entity @s {text:{text:"Toggle map: <Name>",color:"yellow",bold:false}}
+
+cycle_map_filter_toggle.mcfunction
+
+ Add the flip line:
+  execute if score MapFilterIndex config matches N store success score <Name> mapFilter unless score <Name> mapFilter matches 1
+ Update the last-map guard. Both if score MapsOff config matches 8.. lines become matches N.. (map count − 1 after you add the map).
+
+cycle_map_filter.mcfunction
+
+ Wrap: matches 9.. → matches N+1..

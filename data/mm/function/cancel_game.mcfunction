@@ -9,6 +9,7 @@ scoreboard players set PvpTimer pvptimer -1
 team empty murderer
 team empty detective
 team empty innocent
+team empty jester
 title @a clear
 tellraw @a {"text":"Game cancelled.","color":"gray","italic":true}
 

@@ -1,3 +1,6 @@
+#If the detective's arrow hits the jester, mark them so the jester wins
+execute if entity @s[team=jester] if entity @e[type=arrow,distance=..3,nbt={item:{components:{"minecraft:custom_data":{mm_arrow:1b}}}}] run tag @s add mm_jester_shot
+
 damage @s 1000 minecraft:generic
 
 scoreboard players set @a[team=detective] BowCooldown 60

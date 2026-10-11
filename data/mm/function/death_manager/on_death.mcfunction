@@ -3,7 +3,7 @@ execute as @s at @s run execute as @a[distance=17..] at @s run playsound minecra
 clear @s
 
 gamemode spectator @s
-tellraw @s {"text":"You died! Spectating until the round ends.","color":"red","italic":true}
+tellraw @s[tag=!mm_jester_shot] {"text":"You died! Spectating until the round ends.","color":"red","italic":true}
 
 scoreboard players set @s deaths 0
 
@@ -31,5 +31,11 @@ execute if entity @s[team=detective] run function mm:death_manager/drop_detectiv
 #If a murderer died, despawn their sword immediately so it can't be picked up
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_throw:1b}}}}] run kill @s
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{mm_fake:1b}}}}] run kill @s
+
+#If the detective shot the jester, the jester wins - end the game
+execute if entity @s[team=jester,tag=mm_jester_shot] run function mm:immediate_end
+
+#If anyone else killed the jester, they lose the challenge and the game continues
+execute if entity @s[team=jester,tag=!mm_jester_shot] run tellraw @a {"text":"The Jester was killed and lost the challenge!","color":"light_purple","bold":true}
 
 team leave @s

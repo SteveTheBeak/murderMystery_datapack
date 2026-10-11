@@ -4,6 +4,7 @@ tp @a -44.0 -57.5 26.0 facing -44.0 -57.5 24.0
 effect clear @a
 
 tag @a remove mm_was_murderer
+tag @a remove mm_was_jester
 scoreboard players set GameActive config 0
 execute if score MapWasRandom config matches 1 run scoreboard players set MapSelectIndex config 9
 execute if score MapWasRandom config matches 1 run function mm:apply_map_select_value
@@ -28,6 +29,7 @@ execute if score MapWasRandom config matches 1 run scoreboard players set MapSel
 team empty murderer
 team empty detective
 team empty innocent
+team empty jester
 
 clear @a
 kill @e[tag=dead_body]

@@ -227,3 +227,5 @@ execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=1412,y=200,z=
 execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=1077,y=199,z=341,dx=335,dy=3,dz=-412] run tp @s 1223 214 184 90 0
 #Top
 execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=1077,y=270,z=341,dx=335,dy=-3,dz=-412] run tp @s 1223 214 184 90 0
+
+#Spectator limits for cathedral map

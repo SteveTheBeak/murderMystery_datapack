@@ -28,6 +28,7 @@ execute run setblock 220 -37 12 repeater[facing=west]
 team empty murderer
 team empty detective
 team empty innocent
+team empty jester
 
 scoreboard players set Countdown timer 101
 
