@@ -20,6 +20,9 @@ Spawn map filter button:
 /summon minecraft:interaction ~ ~1.0 ~-0.2 {Tags:["filter_map"],width:1.0,height:1.0}
 /summon minecraft:text_display ~ ~1.5 ~-0.2 {Tags:["filter_map_display"],text:'{"text":"Toggle map: "}',billboard:"fixed"}
 
+Spawn role filter button:
+/summon minecraft:interaction ~ ~1.0 ~-0.2 {Tags:["filter_role"],width:1.0,height:1.0}
+/summon minecraft:text_display ~ ~1.5 ~-0.2 {Tags:["filter_role_display"],text:{text:"Toggle role: ",color:"green"},billboard:"fixed"}
 
 
 Spawn shop toggle buttons:

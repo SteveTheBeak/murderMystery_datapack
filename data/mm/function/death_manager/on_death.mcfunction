@@ -37,5 +37,6 @@ execute if entity @s[team=jester,tag=mm_jester_shot] run function mm:immediate_e
 
 #If anyone else killed the jester, they lose the challenge and the game continues
 execute if entity @s[team=jester,tag=!mm_jester_shot] run tellraw @a {"text":"The Jester was killed and lost the challenge!","color":"light_purple","bold":true}
+execute if entity @s[team=jester,tag=!mm_jester_shot] run tellraw @a [{"text":"The jester was: ","color":"light_purple"},{"selector":"@a[tag=mm_was_jester]","color":"light_purple"}]
 
 team leave @s

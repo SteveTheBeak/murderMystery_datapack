@@ -229,3 +229,15 @@ execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=1077,y=199,z=
 execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=1077,y=270,z=341,dx=335,dy=-3,dz=-412] run tp @s 1223 214 184 90 0
 
 #Spectator limits for cathedral map
+#West wall
+execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=-1301,y=80,z=239,dx=3,dy=-130,dz=-639] run tp @s -1024 -5 -164 90 0
+#North wall
+execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=-1300,y=80,z=-401,dx=639,dy=-130,dz=3] run tp @s -1024 -5 -164 90 0
+#South wall
+execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=-661,y=80,z=240,dx=-639,dy=-130,dz=-3] run tp @s -1024 -5 -164 90 0
+#East wall
+execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=-660,y=80,z=-400,dx=-3,dy=-130,dz=639] run tp @s -1024 -5 -164 90 0
+#Bottom
+execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=-660,y=-50,z=-401,dx=-641,dy=3,dz=641] run tp @s -1024 -5 -164 90 0
+#Top
+execute if score PvpTimer pvptimer matches 1.. run execute as @e[x=-660,y=80,z=-401,dx=-641,dy=-3,dz=641] run tp @s -1024 -5 -164 90 0

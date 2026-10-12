@@ -19,7 +19,7 @@ scoreboard players operation MurdererLoop temp = MurdererCountLength config
 #ASSIGN MURDERERS | PATH 3.3.1
 function mm:assign_murderers
 execute as @r[team=!murderer] run team join detective @s
-execute as @r[team=!murderer,team=!detective] run team join jester @s
+execute unless score Jester roleFilter matches 1 as @r[team=!murderer,team=!detective] run team join jester @s
 team join innocent @a[team=!murderer,team=!detective,team=!jester]
 
 tag @a[team=jester] add mm_was_jester
@@ -34,5 +34,14 @@ execute as @a[team=murderer] run title @a[team=murderer] title {"text":"MURDERER
 execute as @a[team=detective] run title @a[team=detective] title {"text":"DETECTIVE","color":"blue","bold":false}
 execute as @a[team=jester] run title @a[team=jester] title {"text":"JESTER","color":"light_purple","bold":false}
 
+#Instructions for innocent
+tellraw @a[team=innocent] {"text":"Survive until the end.","color":"green"}
+
+#Instructions for murderer
+tellraw @a[team=murderer] {"text":"Kill all the players.","color":"red"}
+
+#Instructions for detective
+tellraw @a[team=detective] {"text":"Find and shoot the murderer(s).","color":"blue"}
+
 #Instructions for jester
-tellraw @a[team=jester] {"text":"Win by getting shot by the detective.","color":"light_purple"}
+tellraw @a[team=jester] {"text":"Win by getting shot ONLY by the detective.","color":"light_purple"}

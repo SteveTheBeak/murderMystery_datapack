@@ -59,6 +59,6 @@ execute if score MapSelectIndex config matches 7 run scoreboard players set MapM
 #Cathedral
 execute if score MapSelectIndex config matches 8 run scoreboard players set MapCenterX config -1024
 execute if score MapSelectIndex config matches 8 run scoreboard players set MapCenterZ config -164
-execute if score MapSelectIndex config matches 8 run scoreboard players set MapRadius config 50
+execute if score MapSelectIndex config matches 8 run scoreboard players set MapRadius config 40
 execute if score MapSelectIndex config matches 8 run scoreboard players set MapMaxHeight config -4
 execute if score MapSelectIndex config matches 8 run scoreboard players set MapMinHeight config -8

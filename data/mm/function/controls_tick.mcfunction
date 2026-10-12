@@ -16,6 +16,10 @@ execute as @e[type=interaction,tag=map_select] if data entity @s attack run func
 execute as @e[type=interaction,tag=filter_map] if data entity @s interaction run function mm:cycle_map_filter
 execute as @e[type=interaction,tag=filter_map] if data entity @s attack run function mm:cycle_map_filter_toggle
 
+#Role filter cycle
+execute as @e[type=interaction,tag=filter_role] if data entity @s interaction run function mm:cycle_role_filter
+execute as @e[type=interaction,tag=filter_role] if data entity @s attack run function mm:cycle_role_filter_toggle
+
 #START BUTTON | PATH 1.4
 execute as @e[type=interaction,tag=start_button] if data entity @s interaction run function mm:press_start
 

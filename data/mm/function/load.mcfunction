@@ -17,6 +17,7 @@ scoreboard objectives add ChosenItem dummy
 scoreboard objectives add HasShopItem dummy
 scoreboard objectives add HurtCheck dummy
 scoreboard objectives add mapFilter dummy
+scoreboard objectives add roleFilter dummy
 
 scoreboard objectives add Move minecraft.custom:minecraft.walk_one_cm
 scoreboard objectives add Sprint minecraft.custom:minecraft.sprint_one_cm
@@ -92,6 +93,7 @@ execute as @a run attribute @s minecraft:attack_damage base set 0
 #SETTINGS
 execute unless score TimerLength config matches -2147483648..2147483647 run scoreboard players set TimerLength config 10
 execute unless score MurdererCountLength config matches -2147483648..2147483647 run scoreboard players set MurdererCountLength config 10
+execute unless score RoleFilterIndex config matches -2147483648..2147483647 run scoreboard players set RoleFilterIndex config 0
 
 execute unless score TimerIndex config matches -2147483648..2147483647 run scoreboard players set TimerIndex config 0
 execute unless score MurdererCountIndex config matches -2147483648..2147483647 run scoreboard players set MurdererCountIndex config 0
@@ -126,5 +128,6 @@ execute unless score #global slots_pool matches -2147483648..2147483647 run scor
 
 function mm:apply_map_coords
 function mm:apply_map_filter
+function mm:apply_role_filter
 
 say Murder Mystery datapack initialized
