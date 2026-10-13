@@ -18,6 +18,7 @@ scoreboard objectives add HasShopItem dummy
 scoreboard objectives add HurtCheck dummy
 scoreboard objectives add mapFilter dummy
 scoreboard objectives add roleFilter dummy
+scoreboard objectives add ShopIndex dummy
 
 scoreboard objectives add Move minecraft.custom:minecraft.walk_one_cm
 scoreboard objectives add Sprint minecraft.custom:minecraft.sprint_one_cm
@@ -130,6 +131,9 @@ execute unless score shop_murderer_darkness config matches -2147483648..21474836
 execute unless score shop_murderer_deceive config matches -2147483648..2147483647 run scoreboard players set shop_murderer_deceive config 1
 execute unless score shop_murderer_rocket config matches -2147483648..2147483647 run scoreboard players set shop_murderer_rocket config 1
 
+execute unless score Innocent ShopIndex matches -2147483648..2147483647 run scoreboard players set Innocent ShopIndex 0
+execute unless score Detective ShopIndex matches -2147483648..2147483647 run scoreboard players set Detective ShopIndex 0
+execute unless score Murderer ShopIndex matches -2147483648..2147483647 run scoreboard players set Murderer ShopIndex 0
 
 execute unless score GameActive config matches -2147483648..2147483647 run scoreboard players set GameActive config 0
 execute unless score DebugMode config matches -2147483648..2147483647 run scoreboard players set DebugMode config 1
@@ -141,5 +145,6 @@ execute unless score #global slots_pool matches -2147483648..2147483647 run scor
 function mm:apply_map_coords
 function mm:apply_map_filter
 function mm:apply_role_filter
+function mm:apply_shop_filter
 
 say Murder Mystery datapack initialized

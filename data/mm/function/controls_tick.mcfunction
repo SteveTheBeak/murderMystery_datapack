@@ -27,7 +27,12 @@ execute as @e[type=interaction,tag=filter_role] if data entity @s attack run fun
 execute as @e[type=interaction,tag=start_button] if data entity @s interaction run function mm:press_start
 
 #TOGGLE SHOP ITEMS | PATH 1.5
-execute as @e[type=interaction,tag=setting_shop] if data entity @s interaction run function mm:cycle_toggle_items
+execute as @e[type=interaction,tag=innocent_shop] if data entity @s interaction run function mm:cycle_shop_filter
+execute as @e[type=interaction,tag=innocent_shop] if data entity @s attack run function mm:cycle_shop_filter_toggle
+execute as @e[type=interaction,tag=detective_shop] if data entity @s interaction run function mm:cycle_shop_filter
+execute as @e[type=interaction,tag=detective_shop] if data entity @s attack run function mm:cycle_shop_filter_toggle
+execute as @e[type=interaction,tag=murderer_shop] if data entity @s interaction run function mm:cycle_shop_filter
+execute as @e[type=interaction,tag=murderer_shop] if data entity @s attack run function mm:cycle_shop_filter_toggle
 
 #Game master vote
 execute as @e[type=interaction,tag=gm_button] if data entity @s interaction run function mm:gm/press

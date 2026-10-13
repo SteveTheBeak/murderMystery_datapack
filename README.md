@@ -28,9 +28,19 @@ Spawn game master button:
 /summon minecraft:interaction ~ ~1.0 ~-0.2 {Tags:["gm_button"],width:1.0,height:1.0}
 /summon minecraft:text_display ~ ~1.5 ~-0.2 {Tags:["gm_button_display"],text:{text:"Vote for Game Master",color:"green"},billboard:"fixed"}
 
-
-
 Spawn shop toggle buttons:
+Innocent:
+/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["innocent_shop"],width:1.0,height:1.0}
+/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["innocent_shop_display"],text:{text:"Innocent",color:"green"},billboard:"fixed"}
+Detective:
+/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["detective_shop"],width:1.0,height:1.0}
+/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["detective_shop_display"],text:{text:"Detective",color:"blue"},billboard:"fixed"}
+Murderer:
+/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["murderer_shop"],width:1.0,height:1.0}
+/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["murderer_shop_display"],text:{text:"Murderer",color:"red"},billboard:"fixed"}
+
+
+
 Common, invisibility
 /summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_invisibility"],width:1.0,height:1.0}
 /summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_invisibility_display"],text:{text:"Invisibility",color:"aqua"},billboard:"fixed"}
