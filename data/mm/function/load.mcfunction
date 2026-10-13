@@ -49,6 +49,14 @@ scoreboard objectives add SwordAway dummy
 scoreboard objectives add FreezeTimer dummy
 scoreboard objectives add DecoyTimer dummy
 scoreboard objectives add slots_pool dummy
+scoreboard objectives add SpectatorEffects dummy
+
+#Game master
+scoreboard objectives add GmVote trigger
+scoreboard objectives add GmId dummy
+scoreboard objectives add GmChoice dummy
+scoreboard objectives add GmVotes dummy
+scoreboard objectives add IsGm dummy
 
 
 data modify storage mm:shop items set value [{tag:"mm_shop_gold",slot:0,rawSlot:9,itemId:"minecraft:gold_ingot",giveFunction:"mm:shop/shop_menu"},{tag:"mm_shop_item",slot:11,rawSlot:20,itemId:"minecraft:potion",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:12,rawSlot:21,itemId:"minecraft:potion",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:14,rawSlot:23,itemId:"minecraft:bow",giveFunction:"mm:shop/give_shop_items"},{tag:"mm_shop_item",slot:15,rawSlot:24,itemId:"minecraft:totem_of_undying",giveFunction:"mm:shop/give_shop_items"}]
@@ -101,6 +109,10 @@ execute unless score MapSelectIndex config matches -2147483648..2147483647 run s
 execute unless score MapFilterIndex config matches -2147483648..2147483647 run scoreboard players set MapFilterIndex config 0
 execute unless score MapsOff config matches -2147483648..2147483647 run scoreboard players set MapsOff config 0
 execute unless score MapWasRandom config matches -2147483648..2147483647 run scoreboard players set MapWasRandom config 0
+
+execute unless score GmActive config matches -2147483648..2147483647 run scoreboard players set GmActive config 0
+execute unless score GmVoteTimer config matches -2147483648..2147483647 run scoreboard players set GmVoteTimer config 0
+execute unless score GmCooldown config matches -2147483648..2147483647 run scoreboard players set GmCooldown config 0
 
 #Toggle shop items enables
 #Common

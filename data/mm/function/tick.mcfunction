@@ -55,6 +55,10 @@ function mm:shop/decoy_tick
 #Enable fly_tick function
 function mm:throw_sword/fly_tick
 
+#Particles on spectators hit by the sword
+execute as @a[scores={SpectatorEffects=1..},gamemode=spectator] at @s run particle cloud ^ ^ ^-0.5 0 -0.5 0 0 5 force
+scoreboard players remove @a[scores={SpectatorEffects=1..}] SpectatorEffects 1
+
 #GOLD DROP
 execute if score PvpTimer pvptimer matches 0.. run function mm:gold/gold_tick
 

@@ -3,7 +3,8 @@ execute as @s at @s run execute as @a[distance=17..] at @s run playsound minecra
 clear @s
 
 gamemode spectator @s
-tellraw @s[tag=!mm_jester_shot] {"text":"You died! Spectating until the round ends.","color":"red","italic":true}
+tellraw @s[tag=!mm_jester_shot] {"text":"You died! You are now a ghost, and can protect innocents by body-blocking flying swords.","color":"gray","italic":true}
+title @s[tag=!mm_jester_shot] title {"text":"💀","color":"red"}
 
 scoreboard players set @s deaths 0
 

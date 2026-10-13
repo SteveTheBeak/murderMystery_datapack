@@ -1,0 +1,1 @@
+$tellraw @a {"text":"  ","extra":[{"selector":"@s","color":"aqua","click_event":{"action":"run_command","command":"/trigger GmVote set $(gm_id)"},"hover_event":{"action":"show_text","value":"Click to vote"}}]}

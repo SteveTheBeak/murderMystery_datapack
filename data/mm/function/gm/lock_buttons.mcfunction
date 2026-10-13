@@ -1,0 +1,2 @@
+execute as @e[type=interaction,tag=!gm_button,tag=!thrown_sword_hitbox] if data entity @s interaction run function mm:gm/check_click {kind:"interaction"}
+execute as @e[type=interaction,tag=!gm_button,tag=!thrown_sword_hitbox] if data entity @s attack run function mm:gm/check_click {kind:"attack"}

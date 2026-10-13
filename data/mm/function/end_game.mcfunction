@@ -20,9 +20,6 @@ execute run fill -431 6 554 -436 10 554 minecraft:light_gray_stained_glass_pane
 #Remove oats
 kill @e[type=minecraft:item_frame,x=-398,y=3,z=403,dx=0,dy=0,dz=0]
 
-#Remove all items on the floor
-kill @e[type=minecraft:item]
-
 #If map was chosen randomly, set map select index back to the random value
 execute if score MapWasRandom config matches 1 run scoreboard players set MapSelectIndex config 9
 
@@ -44,3 +41,7 @@ tag @e[tag=gold_active] remove gold_active
 tag @a remove mm_dead
 tag @a remove mm_compass_given
 scoreboard players set @a EnforceTimer 0
+scoreboard players set @a SpectatorEffects 0
+
+#Remove all items on the floor
+kill @e[type=minecraft:item]
