@@ -3,6 +3,7 @@
 scoreboard players set GameActive config 1
 
 tag @a remove mm_dead
+tag @a remove mm_spec_blocked
 scoreboard players set @a EnforceTimer 0
 
 scoreboard players set MapWasRandom config 0

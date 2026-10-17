@@ -94,6 +94,12 @@ execute as @a[team=murderer] if score @s SwordAway matches 0 if score @s MeleeCo
 #Force-remove any dropped sword sitting on the ground
 kill @e[type=item,tag=!keep]
 
+#Demote detective that rejoins the game to innocent
+execute as @a[scores={Left=1..},team=detective] run clear @s minecraft:bow[minecraft:custom_data={mm_bow:1b}]
+execute as @a[scores={Left=1..},team=detective] run clear @s minecraft:arrow[minecraft:custom_data={mm_arrow:1b}]
+execute as @a[scores={Left=1..},team=detective] run team join innocent @s
+scoreboard players set @a[scores={Left=1..}] Left 0
+
 #BOW/ARROW
 #Bow: always enforce, same pattern as the sword
 execute as @a[team=detective] unless entity @s[nbt={Inventory:[{Slot:7b,components:{"minecraft:custom_data":{mm_bow:1b}}}]}] run clear @s minecraft:bow[minecraft:custom_data={mm_bow:1b}]
@@ -183,6 +189,10 @@ execute as @a[tag=!mm_dead] if score PvpTimer pvptimer matches 1.. store result 
 execute as @a[tag=!mm_dead] if score PvpTimer pvptimer matches 1.. store result score @s LiveY run data get entity @s Pos[1]
 execute as @a[tag=!mm_dead] if score PvpTimer pvptimer matches 1.. store result score @s LiveZ run data get entity @s Pos[2]
 
+#Store position of detective in case they disconnect
+execute as @a[team=detective] store result storage mm:detpos x int 1 run scoreboard players get @s LiveX
+execute as @a[team=detective] store result storage mm:detpos y int 1 run scoreboard players get @s LiveY
+execute as @a[team=detective] store result storage mm:detpos z int 1 run scoreboard players get @s LiveZ
 
 #SHOP
 #Keep the shop icon pinned in place, immune to both duplication and relocation
@@ -199,6 +209,8 @@ execute if score PvpTimer pvptimer matches 6001 run title @a title {"text":"5 mi
 execute if score PvpTimer pvptimer matches 1200 run title @a title {"text":"1 minute remaining","color":"red","bold":false}
 #PVPTIMER DECREASE UNTIL -1
 execute if score PvpTimer pvptimer matches 1.. run scoreboard players remove PvpTimer pvptimer 1
+
+execute if score PvpTimer pvptimer matches 1.. unless entity @a[team=detective] unless entity @e[tag=mm_detective_pickup] run function mm:death_manager/drop_detective_bow with storage mm:detpos
 
 #Check which players are alive for early game end
 execute if score PvpTimer pvptimer matches 0.. unless entity @a[team=murderer] run function mm:immediate_end

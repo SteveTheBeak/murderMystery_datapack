@@ -50,5 +50,8 @@ execute if score MapSelectIndex config matches 4 run fill -431 6 554 -436 10 554
 #Remove oats
 kill @e[type=minecraft:item_frame,x=-398,y=3,z=403,dx=0,dy=0,dz=0]
 
+#Set redstone block in skeld for innocent tester
+setblock 143 -53 151 minecraft:redstone_block
+
 #Stop loading pool table chunk
 forceload remove 241 -1 202 27

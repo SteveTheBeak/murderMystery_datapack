@@ -40,55 +40,6 @@ Murderer:
 /summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["murderer_shop_display"],text:{text:"Murderer",color:"red"},billboard:"fixed"}
 
 
-
-Common, invisibility
-/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_invisibility"],width:1.0,height:1.0}
-/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_invisibility_display"],text:{text:"Invisibility",color:"aqua"},billboard:"fixed"}
-
-Innocent, speed
-/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_innocent_speed"],width:1.0,height:1.0}
-/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_innocent_speed_display"],text:{text:"Speed",color:"aqua"},billboard:"fixed"}
-Innocent, bow
-/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_innocent_bow"],width:1.0,height:1.0}
-/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_innocent_bow_display"],text:{text:"Bow",color:"aqua"},billboard:"fixed"}
-Innocent, extra life
-/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_innocent_extralife"],width:1.0,height:1.0}
-/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_innocent_extralife_display"],text:{text:"Extra Life",color:"aqua"},billboard:"fixed"}
-
-Detective, glow
-/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_detective_glow"],width:1.0,height:1.0}
-/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_detective_glow_display"],text:{text:"Make Players Glow",color:"aqua"},billboard:"fixed"}
-Detective, freeze
-/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_detective_freeze"],width:1.0,height:1.0}
-/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_detective_freeze_display"],text:{text:"Freeze Murderers",color:"aqua"},billboard:"fixed"}
-Detective, extra life
-/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_detective_extralife"],width:1.0,height:1.0}
-/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_detective_extralife_display"],text:{text:"Extra Life",color:"aqua"},billboard:"fixed"}
-
-Murderer, darkness
-/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_murderer_darkness"],width:1.0,height:1.0}
-/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_murderer_darkness_display"],text:{text:"Give Players Darkness",color:"aqua"},billboard:"fixed"}
-Murderer, deceive
-/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_murderer_deceive"],width:1.0,height:1.0}
-/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_murderer_deceive_display"],text:{text:"Deception",color:"aqua"},billboard:"fixed"}
-Murderer, rocket
-/summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["setting_shop", "shop_murderer_rocket"],width:1.0,height:1.0}
-/summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["shop_murderer_rocket_display"],text:{text:"Rocket Launcher",color:"aqua"},billboard:"fixed"}
-
-
-
-Shop toggle indicators:
-/summon minecraft:text_display ~-0.5 ~2.3 ~ {Rotation:[-90f,0f],Tags:["innocent_shop_indicator"],text:{text:"Innocent's Shop",color:"green",bold:true},billboard:"fixed"}
-/kill @e[type=minecraft:text_display,tag=innocent_shop_indicator]
-
-/summon minecraft:text_display ~-0.5 ~2.3 ~ {Rotation:[-90f,0f],Tags:["detective_shop_indicator"],text:{text:"Detective's Shop",color:"blue",bold:true},billboard:"fixed"}
-/kill @e[type=minecraft:text_display,tag=detective_shop_indicator]
-
-/summon minecraft:text_display ~-0.5 ~2.3 ~ {Rotation:[-90f,0f],Tags:["murderer_shop_indicator"],text:{text:"Murderer's Shop",color:"red",bold:true},billboard:"fixed"}
-/kill @e[type=minecraft:text_display,tag=murderer_shop_indicator]
-
-
-
 Debug:
 /scoreboard players set DebugMode config [0 or 1]
 

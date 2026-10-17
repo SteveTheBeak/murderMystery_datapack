@@ -40,8 +40,12 @@ tag @e[tag=gold_active] remove gold_active
 
 tag @a remove mm_dead
 tag @a remove mm_compass_given
+tag @a remove mm_spec_blocked
 scoreboard players set @a EnforceTimer 0
 scoreboard players set @a SpectatorEffects 0
+
+#Kill all horses, mainly for palace map
+kill @e[type=horse]
 
 #Remove all items on the floor
 kill @e[type=minecraft:item]

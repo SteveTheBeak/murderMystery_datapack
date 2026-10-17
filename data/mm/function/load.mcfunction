@@ -52,6 +52,8 @@ scoreboard objectives add DecoyTimer dummy
 scoreboard objectives add slots_pool dummy
 scoreboard objectives add SpectatorEffects dummy
 
+scoreboard objectives add Left minecraft.custom:minecraft.leave_game
+
 #Game master
 scoreboard objectives add GmVote trigger
 scoreboard objectives add GmId dummy
