@@ -22,6 +22,8 @@ execute as @r[team=!murderer] run team join detective @s
 execute unless score Jester roleFilter matches 1 as @r[team=!murderer,team=!detective] run team join jester @s
 team join innocent @a[team=!murderer,team=!detective,team=!jester]
 
+tag @a[team=detective] add mm_was_detective
+tag @a[team=innocent] add mm_was_innocent
 tag @a[team=jester] add mm_was_jester
 
 #ROLE ITEMS

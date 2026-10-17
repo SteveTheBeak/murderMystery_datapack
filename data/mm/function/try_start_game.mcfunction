@@ -14,6 +14,8 @@ scoreboard players set @a gold 0
 scoreboard players set GoldTimer gold 0
 scoreboard players set @a FreezeTimer -1
 scoreboard players set @a DecoyTimer -1
+tag @a remove mm_was_detective
+tag @a remove mm_was_innocent
 tag @a remove mm_was_murderer
 tag @a remove mm_was_jester
 tag @a remove mm_jester_shot

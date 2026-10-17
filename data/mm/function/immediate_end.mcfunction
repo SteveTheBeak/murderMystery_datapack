@@ -3,6 +3,8 @@
 execute run tellraw @a {"text":"Game over!","color":"gray","italic":true}
 execute run scoreboard players set PvpTimer pvptimer -1
 
+function mm:stats/credit_played
+
 #JESTER WIN | overrides every other result
 execute if entity @a[tag=mm_jester_shot] run schedule function mm:end_game 60
 execute if entity @a[tag=mm_jester_shot] run return run function mm:jester_win
@@ -40,4 +42,5 @@ execute unless entity @a[team=innocent] unless entity @a[team=detective] run tel
 execute if entity @a[team=jester] run tellraw @a {"text":"The Jester is still alive and lost the challenge!","color":"light_purple"}
 execute if entity @a[team=jester] run tellraw @a [{"text":"The jester was: ","color":"light_purple"},{"selector":"@a[tag=mm_was_jester]","color":"light_purple"}]
 
+function mm:stats/credit_wins
 schedule function mm:end_game 60

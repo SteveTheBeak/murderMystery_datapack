@@ -24,6 +24,9 @@ execute if score Countdown timer matches 40 at @a run playsound minecraft:block.
 execute if score Countdown timer matches 20 run title @a title {"text":"1","color":"yellow","bold":true}
 execute if score Countdown timer matches 20 at @a run playsound minecraft:block.note_block.pling block @a ~ ~ ~ 2 1.2
 
+#Stats display board
+execute unless score PvpTimer pvptimer matches 0.. run function mm:stats/update_display
+
 #Reset pool table in airship by killing sulfur cubes
 execute if score MapSelectIndex config matches 1 if score Countdown timer matches 80 run kill @e[x=63,y=-20,z=88,dx=181,dy=-50,dz=-92,type=sulfur_cube]
 execute if score MapSelectIndex config matches 1 if score Countdown timer matches 20 run kill @e[x=63,y=-20,z=88,dx=181,dy=-50,dz=-92,type=sulfur_cube]
@@ -144,11 +147,11 @@ execute as @a[team=detective] store result score @s TempCalc run clear @s minecr
 execute as @a[team=detective] if score @s TempCalc matches 2.. run clear @s minecraft:arrow[minecraft:custom_data={mm_arrow:1b}]
 execute as @a[team=detective] if score @s TempCalc matches 2.. run item replace entity @s hotbar.8 with minecraft:arrow[minecraft:custom_data={mm_arrow:1b}] 1
 
-
 #Convert picked-up gold into score, then remove the physical copies entirely
 execute as @a store result score @s TempCalc run clear @s minecraft:gold_ingot[minecraft:custom_data={mm_gold:1b}] 0
 execute as @a if score @s TempCalc matches 1.. run scoreboard players operation @s gold += @s TempCalc
 execute as @a if score @s TempCalc matches 1.. run clear @s minecraft:gold_ingot[minecraft:custom_data={mm_gold:1b}]
+execute as @a if score @s TempCalc matches 1.. run scoreboard players operation @s GoldTotal += @s TempCalc
 
 #Detect if player clicks shop icon
 execute as @a if items entity @s player.cursor minecraft:emerald[minecraft:custom_data={mm_shop:1b}] run function mm:shop/shop_menu
