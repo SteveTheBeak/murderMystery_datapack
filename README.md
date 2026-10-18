@@ -39,7 +39,11 @@ Murderer:
 /summon minecraft:interaction ~-0.2 ~1.0 ~ {Rotation:[-90f,0f],Tags:["murderer_shop"],width:1.0,height:1.0}
 /summon minecraft:text_display ~-0.2 ~1.5 ~ {Rotation:[-90f,0f],Tags:["murderer_shop_display"],text:{text:"Murderer",color:"red"},billboard:"fixed"}
 
+#Personal stats display
 /summon minecraft:text_display ~ ~ ~ {Rotation:[90f,0f],Tags:["stats_display"],text:{text:"Stats",color:"green"},billboard:"fixed"}
+#Leaderboard display
+/summon minecraft:text_display ~ ~ ~ {Rotation:[90f,0f],Tags:["leaderboard_display","leaderboard_left"],text:{text:"leaderboard",color:"green"},billboard:"fixed"}
+
 
 Debug:
 /scoreboard players set DebugMode config [0 or 1]

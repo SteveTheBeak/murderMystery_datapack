@@ -37,6 +37,7 @@ scoreboard objectives add LiveX dummy
 scoreboard objectives add LiveY dummy
 scoreboard objectives add LiveZ dummy
 
+#Stats board and leaderboard
 scoreboard objectives add GamesPlayed dummy
 scoreboard objectives add WinsMurderer dummy
 scoreboard objectives add WinsDetective dummy
@@ -44,6 +45,7 @@ scoreboard objectives add WinsInnocent dummy
 scoreboard objectives add WinsJester dummy
 scoreboard objectives add WinsTotal dummy
 scoreboard objectives add GoldTotal dummy
+scoreboard objectives add lbtmp dummy
 
 scoreboard objectives add mm_disc_cd dummy
 scoreboard players set global mm_disc_cd 0

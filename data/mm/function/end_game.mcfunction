@@ -1,3 +1,7 @@
+#Update leaderboard
+execute as @a at @s run function mm:stats/lb_player
+function mm:stats/lb_render
+
 gamemode adventure @a
 tp @a -44.0 -57.5 26.0 facing -44.0 -57.5 24.0
 
